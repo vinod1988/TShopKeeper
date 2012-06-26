@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item
+        android:id="@+id/contact_us"
+        android:icon="@drawable/ic_menu_send"
+        android:title="@string/app_contact_us_title"/>
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_menu_preferences"
+        android:title="@string/app_setting_title"/>
+    <item
+        android:id="@+id/about"
+        android:icon="@drawable/ic_menu_info_details"
+        android:title="@string/app_about_title"/>
+    <item
+        android:id="@+id/exit"
+        android:icon="@drawable/ic_menu_close_clear_cancel"
+        android:title="@string/app_exit_title"/>
+</menu>

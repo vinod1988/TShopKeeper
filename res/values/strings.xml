@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, ShopKeeperActivity!</string>
+    <string name="app_name">移动掌柜</string>
+    <string name="network_doctor">"你当前的无线网络可能存在问题，建议你改用GPRS网络。
+是否现在去更改设置？"</string>
+    <string name="app_copyright">"翊鸿科技公司 版权所有
+Copyright © 2012 yihong.
+All Rights Reserved."</string>
+
+    <string name="app_exit_confirm_info">你确定要退出么?</string>
+    <string name="app_exit_title">退出</string>
+    <string name="app_about_title">关于</string>
+    <string name="app_contact_us_title">联系我们</string>
+    <string name="app_setting_title">设置</string>
+    <string name="app_login">用淘宝帐号登录</string>
+    <string name="app_tip">提示</string>
+    <string name="app_send">发送</string>
+    <string name="app_sending">正在发送...</string>
+    <string name="app_set">设置</string>
+    <string name="app_back">返回</string>
+    <string name="app_cancel">取消</string>
+    <string name="app_ok">确定</string>
+    <string name="app_save">保存</string>
+    <string name="app_delete">删除</string>
+    <string name="app_continue">继续</string>
+    <string name="app_nextstep">下一步</string>
+    <string name="app_prevstep">上一步</string>
+    <string name="app_finish">完成</string>
+    <string name="app_find">查找</string>
+    <string name="app_edit">编辑</string>
+    <string name="app_yes">是</string>
+    <string name="app_no">否</string>
+    <string name="app_down_show_nexttime">下次不提示</string>
+    <string name="app_waiting">请稍候...</string>
+    <string name="app_loading_data">正在载入数据...</string>
+    <string name="app_empty_string" />
+    <string name="app_new">new</string>
+    <string name="app_download">下载</string>
+    <string name="app_install">安装</string>
+    <string name="app_canceling">取消中</string>
+    <string name="app_downloading">下载中...</string>
+    <string name="app_download_finish">下载完成</string>
+    
+	<string name="app_err_system_busy_tip">系统繁忙，请稍候重试</string>
+    <string name="app_err_server_busy_tip">服务器繁忙，请稍后再试</string>
+    
+    <string name="fmt_http_err" formatted="false">无法连接到服务器(%d,%d)，请检查你的网络或稍后重试</string>
+    <string name="fmt_iap_err">网络连接不可用，请稍候重试</string>
+    <string name="fmt_search_err" formatted="false">查找失败(%d,%d)</string>
+    <string name="fmt_date">M月d日</string>
+    <string name="fmt_longdate">yyyy年M月d日</string>
+    <string name="fmt_datetime">M月d日 %skk:mm</string>
+    <string name="fmt_patime">kk:mm</string>
+    <string name="fmt_longtime">yyyy年M月d日 %skk:mm</string>
+    <string name="fmt_in60min">%d分钟前</string>
+    <string name="fmt_justnow">1分钟内</string>
+    <string name="fmt_dawn">凌晨</string>
+    <string name="fmt_morning">早上</string>
+    <string name="fmt_noon">中午</string>
+    <string name="fmt_afternoon">下午</string>
+    <string name="fmt_evening">晚上</string>
+    <string name="fmt_pre_yesterday">昨天</string>
+    <string name="fmt_delcontactmsg_confirm">确定删除和%s的聊天记录吗？</string>
+    <string name="fmt_delcontactmsg_confirm_bottle">确定删除来自%s的漂流瓶的聊天记录吗？</string>
+    <string name="fmt_delcontactmsg_confirm_group">确定删除群的聊天记录吗？</string>
+    <string name="fmt_update">更新</string>
+    <string name="fmt_update_info" formatted="false">"版本信息: 
+%s
+安装包大小: %s</string>
+    <string name="fmt_send_err_account_disabled">你已经关闭了帐户%s的消息收发</string>
+    
+    <string name="settings_about_version">版本</string>
+    <string name="settings_update">检查新版本</string>
+    <string name="settings_feedback">意见反馈</string>
+    
+    <string name="contact_info_qqsync_intro">使用说明</string>
+	
+</resources>
