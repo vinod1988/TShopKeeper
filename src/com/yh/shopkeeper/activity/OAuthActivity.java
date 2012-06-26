@@ -1,21 +1,12 @@
 package com.yh.shopkeeper.activity;
 
-import java.util.List;
-
 import org.springframework.social.oauth2.AccessGrant;
-
 import com.hy.shopkeeper.common.AbstractWebViewActivity;
-import com.hy.shopkeeper.fkw.AccessToken;
-import com.hy.shopkeeper.fkw.RequestToken;
 import com.hy.shopkeeper.fkw.TaoBao;
 import com.hy.shopkeeper.fkw.TaoBaoException;
 import com.hy.shopkeeper.org.json.JSONException;
-import com.yh.shopkeeper.R;
-
-import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
-import android.widget.TextView;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.util.Log;
