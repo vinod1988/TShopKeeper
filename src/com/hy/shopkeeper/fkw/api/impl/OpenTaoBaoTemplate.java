@@ -53,8 +53,7 @@ public class OpenTaoBaoTemplate extends AbstractOAuth2ApiBinding implements Open
 
 	@Override
 	public ShopOperations shopOperations() {
-		// TODO Auto-generated method stub
-		return null;
+		return shopOperations;
 	}
 	
 }

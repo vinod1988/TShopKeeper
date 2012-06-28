@@ -10,8 +10,8 @@
 	<classpathentry kind="lib" path="libs/mbaoV20110627.jar"/>
 	<classpathentry kind="lib" path="libs/spring-android-auth-1.0.0.RELEASE.jar"/>
 	<classpathentry kind="lib" path="libs/spring-android-core-1.0.0.RELEASE.jar" sourcepath="C:/Users/JIANGTI/.m2/repository/org/springframework/android/spring-android-core/1.0.0.RELEASE/spring-android-core-1.0.0.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="libs/spring-android-rest-template-1.0.0.RELEASE.jar" sourcepath="C:/Users/JIANGTI/.m2/repository/org/springframework/android/spring-android-rest-template/1.0.0.RELEASE/spring-android-rest-template-1.0.0.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="libs/jackson-core-asl-1.9.6.jar"/>
 	<classpathentry kind="lib" path="libs/jackson-mapper-asl-1.9.6.jar"/>
-	<classpathentry kind="lib" path="libs/spring-android-rest-template-1.0.0.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
