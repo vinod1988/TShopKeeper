@@ -16,6 +16,7 @@
 package com.hy.shopkeeper.common;
 
 import com.yh.shopkeeper.R;
+import com.yh.shopkeeper.activity.MainApplication;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -57,6 +58,14 @@ public abstract class AbstractWebViewActivity extends Activity implements AsyncA
 				}
 			}
 		});
+	}
+	
+	// ***************************************
+	// Activity methods
+	// ***************************************
+	@Override
+	public MainApplication getApplicationContext() {
+		return (MainApplication) super.getApplicationContext();
 	}
 
 	// ***************************************

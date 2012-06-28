@@ -30,6 +30,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HTMLEntity {
+	
     public static String escape(String original) {
         StringBuffer buf = new StringBuffer(original);
         escape(buf);

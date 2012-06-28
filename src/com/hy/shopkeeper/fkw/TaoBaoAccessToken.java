@@ -1,5 +1,7 @@
 package com.hy.shopkeeper.fkw;
 
+import org.springframework.social.oauth2.AccessGrant;
+
 import com.hy.shopkeeper.org.json.JSONException;
 import com.hy.shopkeeper.org.json.JSONObject;
 
@@ -7,13 +9,17 @@ import com.hy.shopkeeper.org.json.JSONObject;
 /**
  * A data class representing Basic user information element
  */
-public class TaoBaoAccessToken extends TaoBaoResponse implements java.io.Serializable {
+public class TaoBaoAccessToken implements java.io.Serializable {
 
 	private String taobaoUserId;
 	private String taobaoUserNick;
 	private Integer expiresIn;
 	private String accessToken;
 	private String refreshToken;
+	private Long expireTime;
+	private String scope;
+	
+	private AccessGrant accessGrant;
 	  
 	/**
 	 * 
@@ -21,21 +27,31 @@ public class TaoBaoAccessToken extends TaoBaoResponse implements java.io.Seriali
 	private static final long serialVersionUID = 3473349966713163765L;
 
 
-	/*package*/TaoBaoAccessToken(JSONObject json) throws TaoBaoException {
+	/*package*/public TaoBaoAccessToken(JSONObject json) throws JSONException {
 		super();
 		init(json);
 	}
 
-	private void init(JSONObject json) throws TaoBaoException {
+	private void init(JSONObject json) throws JSONException {
 		if(json!=null){
 			try {
-				taobaoUserId = json.getString("taobao_user_id");
-				taobaoUserNick = json.getString("taobao_user_nick");
+				if(json.has("taobao_user_id")){
+					taobaoUserId = json.getString("taobao_user_id");
+				}
+				if(json.has("taobao_user_nick")){
+					taobaoUserNick = json.getString("taobao_user_nick");
+				}
+				if(json.has("scope")){
+					scope = json.getString("scope");
+				}
 				refreshToken = json.getString("refresh_token");
 				accessToken = json.getString("access_token");
 				expiresIn= json.getInt("expires_in");
+				
+				expireTime=(expiresIn != null ? System.currentTimeMillis() + expiresIn * 1000 : null);
+				accessGrant=(new AccessGrant(accessToken,scope,refreshToken,expiresIn));
 			} catch (JSONException jsone) {
-				throw new TaoBaoException(jsone.getMessage() + ":" + json.toString(), jsone);
+				throw jsone;
 			}
 		}
 	}
@@ -44,41 +60,35 @@ public class TaoBaoAccessToken extends TaoBaoResponse implements java.io.Seriali
 		return taobaoUserId;
 	}
 
-	public void setTaobaoUserId(String taobaoUserId) {
-		this.taobaoUserId = taobaoUserId;
-	}
-
 	public String getTaobaoUserNick() {
 		return taobaoUserNick;
 	}
-
-	public void setTaobaoUserNick(String taobaoUserNick) {
-		this.taobaoUserNick = taobaoUserNick;
-	}
-
+	
 	public Integer getExpiresIn() {
 		return expiresIn;
-	}
-
-	public void setExpiresIn(Integer expiresIn) {
-		this.expiresIn = expiresIn;
 	}
 
 	public String getAccessToken() {
 		return accessToken;
 	}
 
-	public void setAccessToken(String accessToken) {
-		this.accessToken = accessToken;
-	}
-
 	public String getRefreshToken() {
 		return refreshToken;
 	}
-
-	public void setRefreshToken(String refreshToken) {
-		this.refreshToken = refreshToken;
+	
+	public Long getExpireTime() {
+		return expireTime;
+	}
+	
+	public boolean isExpire(){
+		if(expiresIn != null){
+			return expireTime<System.currentTimeMillis()?true:false;
+		}else{
+			return true;
+		}
 	}
 
-
+	public AccessGrant getAccessGrant() {
+		return accessGrant;
+	}
 }

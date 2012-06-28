@@ -1,9 +1,22 @@
 package com.yh.shopkeeper.activity;
 
+import org.springframework.social.connect.Connection;
+import org.springframework.social.connect.ConnectionRepository;
+import org.springframework.social.connect.DuplicateConnectionException;
 import org.springframework.social.oauth2.AccessGrant;
+import org.springframework.social.oauth2.GrantType;
+import org.springframework.social.oauth2.OAuth2Parameters;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+
 import com.hy.shopkeeper.common.AbstractWebViewActivity;
+import com.hy.shopkeeper.fkw.Constants;
 import com.hy.shopkeeper.fkw.TaoBao;
+import com.hy.shopkeeper.fkw.TaoBaoAccessToken;
 import com.hy.shopkeeper.fkw.TaoBaoException;
+import com.hy.shopkeeper.fkw.TaoBaoParameter;
+import com.hy.shopkeeper.fkw.api.OpenTaoBao;
+import com.hy.shopkeeper.fkw.connect.OpenTaoBaoConnectionFactory;
 import com.hy.shopkeeper.org.json.JSONException;
 import android.net.Uri;
 import android.os.Bundle;
@@ -20,7 +33,10 @@ import android.widget.Toast;
 public class OAuthActivity extends AbstractWebViewActivity {
 
 	private static final String TAG = OAuthActivity.class.getSimpleName();
-
+	private ConnectionRepository connectionRepository;
+	private OpenTaoBaoConnectionFactory connectionFactory;
+	private final String callbackURL="http://www.oauth.net/2";
+	
 	// ***************************************
 	// Activity methods
 	// ***************************************
@@ -33,7 +49,9 @@ public class OAuthActivity extends AbstractWebViewActivity {
 
 		// Using a custom web view client to capture the access token
 		getWebView().setWebViewClient(new TaoBaoOAuthWebViewClient());
-
+		
+		this.connectionRepository = getApplicationContext().getConnectionRepository();
+		this.connectionFactory = getApplicationContext().getOpenTaoBaoConnectionFactory();
 	}
 
 	@Override
@@ -43,23 +61,40 @@ public class OAuthActivity extends AbstractWebViewActivity {
 		// display the OpenTaoBao authorization page
 		getWebView().loadUrl(getAuthorizeUrl());
 	}
-
+	
 	// ***************************************
 	// Private methods
 	// ***************************************
 	private String getAuthorizeUrl() {
-		TaoBao taobao = OAuthConstant.getInstance().getTaoBao();
-		String authroizeUrl="";
-		try {
-			authroizeUrl=taobao.requestAuthorize();
-		} catch (TaoBaoException e) {
-			e.printStackTrace();
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return authroizeUrl;
+		/* 
+		 * Generate the OpenTaoBao authorization url to be used in the browser or web view the display=touch parameter 
+		 * requests the mobile formatted version of the OpenTaoBao authorization page
+		 */
+		OAuth2Parameters params = new OAuth2Parameters();
+		params.setRedirectUri(callbackURL);
+		params.setScope("item,promotion,item,usergrade");
+		params.setState("1212");
+		params.add("view", "wap");
+		
+		return this.connectionFactory.getOAuthOperations().buildAuthorizeUrl(GrantType.AUTHORIZATION_CODE, params);
 	}
+
+
+//	// ***************************************
+//	// Private methods
+//	// ***************************************
+//	private String getAuthorizeUrl() {
+//		String authroizeUrl="";
+//		try {
+//			authroizeUrl=TaoBao.requestAuthorize();
+//		} catch (TaoBaoException e) {
+//			e.printStackTrace();
+//		} catch (JSONException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		return authroizeUrl;
+//	}
 
 	private void displayOpenTaoBaoOptions() {
 		Intent intent = new Intent();
@@ -84,48 +119,37 @@ public class OAuthActivity extends AbstractWebViewActivity {
 
 			Log.d(TAG, url);
 
-			/*
-			 * The access token is returned in the URI fragment of the URL. See the Desktop Apps section all the way 
-			 * at the bottom of this link:
-			 * 
-			 * http://developers.facebook.com/docs/authentication/
-			 * 
-			 * The fragment will be formatted like this:
-			 * 
-			 * #access_token=A&expires_in=0
-			 */
 			String uriFragment = uri.getFragment();
-
-			// confirm we have the fragment, and it has an access_token parameter
-			if (uriFragment != null && uriFragment.startsWith("access_token=")) {
-
-				/*
-				 * The fragment also contains an "expires_in" parameter. In this
-				 * example we requested the offline_access permission, which
-				 * basically means the access will not expire, so we're ignoring
-				 * it here
-				 */
-				try {
-					// split to get the two different parameters
-					String[] params = uriFragment.split("&");
-
-					// split to get the access token parameter and value
-					String[] accessTokenParam = params[0].split("=");
-
-					// get the access token value
-					String accessToken = accessTokenParam[1];
-					
-				   // create the connection and persist it to the repository
-					AccessGrant accessGrant = new AccessGrant(accessToken);
-					OAuthConstant.getInstance().setAccessToken(accessGrant);
-
-				} catch (Exception e) {
-					// don't do anything if the parameters are not what is expected
-				}
+			
+			if(uriFragment==null && url.startsWith("http://www.oauth.net/2?code=")){
 				
+				// split to get the two different parameters
+				
+				String[] codeParam = url.replace(callbackURL, "").split("&");
+				String[] authorizeParam = codeParam[0].split("=");
+				String authorizationCode=authorizeParam[1];
+				
+				MultiValueMap<String, String> additionalParameters = new LinkedMultiValueMap<String, String>();
+				additionalParameters.set("state", "1212");
+				additionalParameters.set("scope", "item");
+				additionalParameters.set("view", "wap");
+									
+				AccessGrant accessGrant=connectionFactory.getOAuthOperations().exchangeForAccess(authorizationCode, callbackURL, additionalParameters);
+				
+				//TaoBaoAccessToken token=TaoBao.requestAccessToken(authorizationCode);
+				//Create the connection and persist it to the repository
+				//OAuthConstant.getInstance().setTaobaoAccessToken(token);				
+				//Create the connection and persist it to the repository
+				//AccessGrant accessGrant = new AccessGrant(token.getAccessToken());
+				Connection<OpenTaoBao> connection = connectionFactory.createConnection(accessGrant);
+				try {
+					connectionRepository.addConnection(connection);
+				} catch (DuplicateConnectionException e) {
+					// connection already exists in repository!
+				}
+		
 				displayOpenTaoBaoOptions();
 			}
-
 			/*
 			 * if there was an error with the oauth process, return the error description
 			 * 
@@ -144,7 +168,6 @@ public class OAuthActivity extends AbstractWebViewActivity {
 
 	@Override
 	public void displayDialogError(CharSequence message) {
-		// TODO Auto-generated method stub
 		
 	}
 }

@@ -1,6 +1,8 @@
 package com.hy.shopkeeper.common;
 
 import com.yh.shopkeeper.R;
+import com.yh.shopkeeper.activity.MainApplication;
+
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -17,6 +19,13 @@ public abstract class AbstractAsyncActivity extends BaseActivity implements Asyn
         destroyed = true;
     }
 
+    // ***************************************
+	// Activity methods
+	// ***************************************
+	@Override
+	public MainApplication getApplicationContext() {
+		return (MainApplication) super.getApplicationContext();
+	}
 
     public void showLoadingProgressDialog() {
     	showProgressDialog(this.getString(R.string.app_downloading));
@@ -41,7 +50,7 @@ public abstract class AbstractAsyncActivity extends BaseActivity implements Asyn
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setMessage(message);
 		builder.setCancelable(false);
-		builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+		builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
 		     	
 			}
@@ -50,6 +59,4 @@ public abstract class AbstractAsyncActivity extends BaseActivity implements Asyn
 		alert.show();
 	}
 	
-    public void reLogin(){
-    }
 }

@@ -8,8 +8,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+
 /**
- * 临时存储上传图片的内容，格�?，文件信�?�等
+ * 临时存储上传图片的内容，格�?，文件信�?�等
  * 
  * @author 
  * 
