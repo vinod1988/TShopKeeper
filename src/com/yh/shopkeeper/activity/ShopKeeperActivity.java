@@ -16,16 +16,23 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ShopKeeperActivity extends AbstractAsyncActivity {
-	Button beginOuathBtn;
-	TextView txtView;
-	
+			
 	private ConnectionRepository connectionRepository;
 	private OpenTaoBao openTaoBao;
+	
+	private Button beginOuathBtn;
+	private Button btnStart;
+	private TextView txtView;
 	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sigin_activity_layout);
 		this.connectionRepository = getApplicationContext().getConnectionRepository();
+		this.btnStart=(Button)this.findViewById(R.id.button2);
+		this.beginOuathBtn=  (Button) findViewById(R.id.button1);
+		
+		
+		
 	}
 	
 	@Override
@@ -34,13 +41,19 @@ public class ShopKeeperActivity extends AbstractAsyncActivity {
 		if (isConnected()) {
 			this.openTaoBao = connectionRepository.findPrimaryConnection(OpenTaoBao.class).getApi();
 			new ShopTask(getApplicationContext()).execute();
+			btnStart.setOnClickListener(new Button.OnClickListener(){
+			     public void onClick( View v ){   
+		        	Intent intent=new Intent(v.getContext(),ImageListActivity.class);
+		        	v.getContext().startActivity(intent);
+		        }
+		    });			
 		} else {
 			showConnectOption();
 		}
 	}
 		
 	private void showConnectOption(){
-		beginOuathBtn=  (Button) findViewById(R.id.button1);
+		
 		beginOuathBtn.setOnClickListener(new Button.OnClickListener(){
 		     public void onClick( View v ){   
 	        	displayOpenTaoBaoAuthorization();

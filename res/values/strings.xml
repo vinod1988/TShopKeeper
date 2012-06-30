@@ -76,5 +76,11 @@ All Rights Reserved."</string>
     <string name="settings_feedback">意见反馈</string>
     
     <string name="contact_info_qqsync_intro">使用说明</string>
+    
+    
+    <string name="empty">Loading images...</string>
+    <string name="noTasks">No tasks</string>
+    <string name="random">Random</string>
+    <string name="correct">Correct</string>
 	
 </resources>
