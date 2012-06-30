@@ -1,12 +1,13 @@
 package com.yh.shopkeeper;
 
+import com.actionbarsherlock.app.SherlockActivity;
 import com.yh.shopkeeper.R;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 
-public abstract class AbstractAsyncActivity extends BaseActivity implements AsyncActivity {
+public abstract class AbstractAsyncActivity extends SherlockActivity implements AsyncActivity {
 	
     protected static final String TAG = AbstractAsyncActivity.class.getSimpleName();
     private ProgressDialog progressDialog;

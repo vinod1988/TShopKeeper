@@ -20,4 +20,14 @@
     <color name="date_text_color_weekend">#ffff4e31</color>
     <color name="date_text_color_workday">#ff5b1208</color>
     <color name="date_text_color_disable">#ffc4c4c4</color>
+    <color name="android_green">#FFA4C639</color>
+    <color name="honeycombish_blue">#FF58BAED</color>
+    <color name="soft_grey">#FF777777</color>
+    <color name="background">#FFEFEFEF</color>
+    
+    <drawable name="red">#7f00</drawable>
+    <drawable name="blue">#770000ff</drawable>
+    <drawable name="green">#7700ff00</drawable>
+	<drawable name="yellow">#77ffff00</drawable>
+    
 </resources>

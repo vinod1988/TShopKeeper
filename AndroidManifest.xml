@@ -4,35 +4,184 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="11" android:maxSdkVersion="15" />
+    <uses-sdk
+        android:maxSdkVersion="15"
+        android:minSdkVersion="8"
+        android:targetSdkVersion="11" />
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission> 
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
-	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>  
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+	<uses-permission android:name="android.permission.READ_CONTACTS"/>
+	
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
 
-    <application 
+    <application
         android:name=".MainApplication"
         android:icon="@drawable/ic_launcher"
-    	android:theme="@android:style/Theme.NoTitleBar"
-     	android:label="@string/app_name">
-    
-        <activity android:name=".activity.ShopKeeperActivity"
-                  android:label="@string/app_name">
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar" >
+        <activity
+            android:name=".activity.ShopKeeperActivity"
+            android:label="@string/app_name" android:theme="@style/Theme.AndroidDevelopers">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.OAuthActivity" android:label="@string/activity_login_taobao" android:theme="@style/Theme.AndroidDevelopers">
+        </activity>
+        <activity android:name=".activity.AboutActivity" >
+        </activity>
+        <activity android:name=".activity.ImageListActivity" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/activity_name"
+            android:logo="@drawable/ad_logo"
+            android:theme="@style/Theme.AndroidDevelopers" />
+        
+        <activity android:label="@string/activity_sample_code" android:name=".activity.fragment.SampleList" android:theme="@style/Theme.AndroidDevelopers">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="..activity.fragment.SendResult"/>
+
+        <!-- Fragment Support Samples -->
+
+        <activity android:label="@string/fragment_alert_dialog_support" android:name=".activity.fragment.FragmentAlertDialogSupport">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:label="@string/fragment_arguments_support" android:name=".activity.fragment.FragmentArgumentsSupport">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:label="@string/fragment_custom_animation_support" android:name=".activity.fragment.FragmentCustomAnimationSupport">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:label="@string/fragment_hide_show_support" android:name=".activity.fragment.FragmentHideShowSupport" android:windowSoftInputMode="stateUnchanged">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:label="@string/fragment_context_menu_support" android:name=".activity.fragment.FragmentContextMenuSupport">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:label="@string/fragment_dialog_support" android:name=".activity.fragment.FragmentDialogSupport">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:label="@string/fragment_dialog_or_activity_support" android:name=".activity.fragment.FragmentDialogOrActivitySupport">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:label="@string/fragment_layout_support" android:name=".activity.fragment.FragmentLayoutSupport">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:label="@string/fragment_list_array_support" android:name=".activity.fragment.FragmentListArraySupport">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".FragmentLayoutSupport$DetailsActivity"/>
+
+        <activity android:label="@string/fragment_menu_support" android:name=".activity.fragment.FragmentMenuSupport">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:label="@string/fragment_retain_instance_support" android:name=".activity.fragment.FragmentRetainInstanceSupport">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:label="@string/fragment_receive_result_support" android:name=".activity.fragment.FragmentReceiveResultSupport">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:label="@string/fragment_stack_support" android:name=".activity.fragment.FragmentStackSupport">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:label="@string/fragment_tabs" android:name=".activity.fragment.FragmentTabs">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:label="@string/fragment_tabs_pager" android:name=".activity.fragment.FragmentTabsPager">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:label="@string/fragment_pager_support" android:name=".activity.fragment.FragmentPagerSupport">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:label="@string/fragment_state_pager_support" android:name=".activity.fragment.FragmentStatePagerSupport">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
             </intent-filter>
         </activity>
         
-         <activity android:name=".activity.OAuthActivity">
-         </activity>
-         <activity android:name=".activity.AboutActivity">
-         </activity>
-         <activity android:name=".activity.ImageListActivity" />
+         <provider android:authorities="com.example.android.apis.supportv4.app.LoaderThrottle" android:name=".activity.fragment.LoaderThrottleSupport$SimpleProvider" />
+         
     </application>
 
 </manifest>
-
-

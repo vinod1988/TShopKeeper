@@ -24,4 +24,8 @@
     <attr name="closedHandle" format="reference|color" />
     <attr name="closedTitle" format="reference" />
     <attr name="segmentedNames" format="reference" />
+    
+     <declare-styleable name="FragmentArguments">
+        <attr name="android:label" />
+    </declare-styleable>
 </resources>

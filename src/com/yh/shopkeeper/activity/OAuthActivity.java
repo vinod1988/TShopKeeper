@@ -11,12 +11,17 @@ import com.yh.android.framework.util.MultiValueMap;
 import com.yh.android.taobao.fkw.api.OpenTaoBao;
 import com.yh.android.taobao.fkw.connect.OpenTaoBaoConnectionFactory;
 
+import com.yh.shopkeeper.AbstractAsyncActivity;
 import com.yh.shopkeeper.AbstractWebViewActivity;
+import com.yh.shopkeeper.R;
+
 import android.net.Uri;
 import android.os.Bundle;
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.util.Log;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
@@ -24,12 +29,16 @@ import android.widget.Toast;
 /**
  * @author Timo Jiang
  */
-public class OAuthActivity extends AbstractWebViewActivity {
+public class OAuthActivity extends AbstractAsyncActivity {
 
 	private static final String TAG = OAuthActivity.class.getSimpleName();
 	private ConnectionRepository connectionRepository;
 	private OpenTaoBaoConnectionFactory connectionFactory;
 	private final String callbackURL="http://www.oauth.net/2";
+	
+	private Activity activity;
+
+	private WebView webView;
 	
 	// ***************************************
 	// Activity methods
@@ -38,11 +47,21 @@ public class OAuthActivity extends AbstractWebViewActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		this.activity = this;
+		webView=(WebView)this.findViewById(R.id.webview_login_taobao);
+		webView.setWebChromeClient(new WebChromeClient() {
+			public void onProgressChanged(WebView view, int progress) {
+				activity.setTitle(R.string.app_downloading);
+				activity.setProgress(progress * 100);
+				if (progress == 100) {
+					activity.setTitle(R.string.app_name);
+				}
+			}
+		});
 		// OpenTaoBao uses javascript to redirect to the success page
-		getWebView().getSettings().setJavaScriptEnabled(true);
-
+		webView.getSettings().setJavaScriptEnabled(true);
 		// Using a custom web view client to capture the access token
-		getWebView().setWebViewClient(new TaoBaoOAuthWebViewClient());
+		webView.setWebViewClient(new TaoBaoOAuthWebViewClient());
 		
 		this.connectionRepository = getApplicationContext().getConnectionRepository();
 		this.connectionFactory = getApplicationContext().getOpenTaoBaoConnectionFactory();
@@ -53,7 +72,7 @@ public class OAuthActivity extends AbstractWebViewActivity {
 		super.onStart();
 
 		// display the OpenTaoBao authorization page
-		getWebView().loadUrl(getAuthorizeUrl());
+		webView.loadUrl(getAuthorizeUrl());
 	}
 	
 	// ***************************************
@@ -72,23 +91,6 @@ public class OAuthActivity extends AbstractWebViewActivity {
 		
 		return this.connectionFactory.getOAuthOperations().buildAuthorizeUrl(GrantType.AUTHORIZATION_CODE, params);
 	}
-
-
-//	// ***************************************
-//	// Private methods
-//	// ***************************************
-//	private String getAuthorizeUrl() {
-//		String authroizeUrl="";
-//		try {
-//			authroizeUrl=TaoBao.requestAuthorize();
-//		} catch (TaoBaoException e) {
-//			e.printStackTrace();
-//		} catch (JSONException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		return authroizeUrl;
-//	}
 
 	private void displayOpenTaoBaoOptions() {
 		Intent intent = new Intent();

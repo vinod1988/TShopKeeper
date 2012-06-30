@@ -30,7 +30,6 @@ public class ShopKeeperActivity extends AbstractAsyncActivity {
 		this.connectionRepository = getApplicationContext().getConnectionRepository();
 		this.btnStart=(Button)this.findViewById(R.id.button2);
 		this.beginOuathBtn=  (Button) findViewById(R.id.button1);
-
 	}
 	
 	@Override
@@ -43,7 +42,7 @@ public class ShopKeeperActivity extends AbstractAsyncActivity {
 			new ShopTask(getApplicationContext()).execute();
 			this.btnStart.setOnClickListener(new Button.OnClickListener(){
 			     public void onClick( View v ){   
-		        	Intent intent=new Intent(v.getContext(),ImageListActivity.class);
+		        	Intent intent=new Intent(v.getContext(),MainActivity.class);
 		        	v.getContext().startActivity(intent);
 		        }
 		    });			
