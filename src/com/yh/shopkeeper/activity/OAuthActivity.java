@@ -46,23 +46,14 @@ public class OAuthActivity extends AbstractAsyncActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		this.setContentView(R.layout.main);
 		
-		this.activity = this;
 		webView=(WebView)this.findViewById(R.id.webview_login_taobao);
-		webView.setWebChromeClient(new WebChromeClient() {
-			public void onProgressChanged(WebView view, int progress) {
-				activity.setTitle(R.string.app_downloading);
-				activity.setProgress(progress * 100);
-				if (progress == 100) {
-					activity.setTitle(R.string.app_name);
-				}
-			}
-		});
 		// OpenTaoBao uses javascript to redirect to the success page
 		webView.getSettings().setJavaScriptEnabled(true);
 		// Using a custom web view client to capture the access token
 		webView.setWebViewClient(new TaoBaoOAuthWebViewClient());
-		
+		this.activity = this;
 		this.connectionRepository = getApplicationContext().getConnectionRepository();
 		this.connectionFactory = getApplicationContext().getOpenTaoBaoConnectionFactory();
 	}

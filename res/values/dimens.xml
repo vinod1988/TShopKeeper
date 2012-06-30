@@ -17,4 +17,24 @@
 <resources>
     <dimen name="frag_rounding_radius">20dp</dimen>
     <dimen name="progress_action_padding">8dp</dimen>
+    
+     <dimen name="bookmark_icon_size">30.0dip</dimen>
+    <dimen name="bookmark_padding_top">22.0dip</dimen>
+    <dimen name="input_text_size">16.0sp</dimen>
+    <dimen name="photo_preview_thumb">60.0dip</dimen>
+    <dimen name="photo_preview_thumb_upload">55.0dip</dimen>
+    <dimen name="popup_arrow_width">42.0dip</dimen>
+    <dimen name="popup_padding_bottom">46.0dip</dimen>
+    <dimen name="popup_content_long_dimen_max">440.0dip</dimen>
+    <dimen name="popup_content_short_dimen_max">294.0dip</dimen>
+    <dimen name="popup_shadow_edge_top">30.0dip</dimen>
+    <dimen name="popup_shadow_edge_other">40.0dip</dimen>
+    <dimen name="popup_shadow_edge_max_invisble">30.0dip</dimen>
+    <dimen name="pull_to_refresh_distance">20.0dip</dimen>
+    <dimen name="pull_to_refresh_threshold">87.0dip</dimen>
+    <dimen name="ptr_white_view_height_margin">33.0dip</dimen>
+    <dimen name="one_px">1.0px</dimen>
+    <dimen name="two_px">2.0px</dimen>
+    <dimen name="popup_subview_margin">3.0dip</dimen>
+    <dimen name="top_map_height">120.0dip</dimen>
 </resources>

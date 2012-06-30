@@ -3,7 +3,7 @@
      <!-- Variation on the Holo Light theme that styles the Action Bar -->
     <style name="Theme.AndroidDevelopers" parent="Theme.Sherlock.Light.ForceOverflow">
         <item name="android:actionBarItemBackground">@drawable/ad_selectable_background</item>
-        <item name="actionBarItemBackground">@drawable/ad_selectable_background</item>
+        <!--  <item name="actionBarItemBackground">@drawable/ad_selectable_background</item>-->
         <item name="android:popupMenuStyle">@style/MyPopupMenu</item>
         <item name="popupMenuStyle">@style/MyPopupMenu</item>
         <item name="android:dropDownListViewStyle">@style/MyDropDownListView</item>
@@ -283,22 +283,158 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">false</item>
     </style>
-    <style name="title_style">
-        <item name="android:background">@drawable/home_title_background</item>
-    </style>
-    <style name="WeekHeadText">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">#ff272933</item>
-        <item name="android:gravity">center</item>
-        <item name="android:focusable">false</item>
-        <item name="android:clickable">false</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">1.0</item>
-    </style>
-    <style name="titleStyle" parent="@android:style/Theme.Light">
+    
+     <style name="Theme.OrcaDialog" parent="@android:style/Theme">
+        <item name="android:windowBackground">@drawable/orca_panel_background</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
         <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowTitleSize">55.0dip</item>
-        <item name="android:windowTitleBackgroundStyle">@style/title_style</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
     </style>
+    <style name="Theme.OrcaPopup" parent="@android:style/Theme">
+        <item name="android:backgroundDimAmount">0.6</item>
+        <item name="android:windowBackground">@drawable/orca_panel_background</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+    </style>
+    <style name="Theme.Orca" parent="@android:style/Theme">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="Theme.OrcaTransparent" parent="@android:style/Theme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="Theme.Orca.Preferences" parent="@android:style/Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="Theme.Orca.ClickableRow" parent="@android:style/Theme">
+        <item name="android:background">@android:drawable/list_selector_background</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="NotificationText">
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="NotificationTitle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="Theme" parent="@android:style/Theme" />
+    <style name="Theme.FacebookDark" parent="@android:style/Theme.Black">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="Theme.Facebook" parent="@android:style/Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="Theme.Facebook.Preferences" parent="@style/Theme.Facebook" />
+    <style name="ActivityFadeInOut">
+        <item name="android:activityOpenEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/hold</item>
+        <item name="android:activityCloseEnterAnimation">@anim/hold</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out</item>
+    </style>
+    <style name="ActivityFadeInOutFast">
+        <item name="android:activityOpenEnterAnimation">@anim/fade_in_fast</item>
+        <item name="android:activityOpenExitAnimation">@anim/hold</item>
+        <item name="android:activityCloseEnterAnimation">@anim/hold</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out_fast</item>
+    </style>
+    <style name="Theme.FacebookDarkFadeInOut" parent="@style/Theme.FacebookDark">
+        <item name="android:windowAnimationStyle">@style/ActivityFadeInOut</item>
+    </style>
+    <style name="Theme.FacebookFadeInOutFast" parent="@style/Theme.Facebook">
+        <item name="android:windowAnimationStyle">@style/ActivityFadeInOutFast</item>
+    </style>
+    <style name="Theme.Transparent" parent="@style/Theme">
+        <item name="android:colorForeground">@drawable/solid_white</item>
+        <item name="android:windowBackground">@drawable/clear</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+    <style name="ZoomControls">
+        <item name="android:gravity">bottom</item>
+        <item name="android:paddingLeft">15.0dip</item>
+        <item name="android:paddingRight">15.0dip</item>
+    </style>
+    <style name="PhotoOverlayButton">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:background">@drawable/photo_overlay_btn_left</item>
+    </style>
+    <style name="PhotoOverlayButtonRight" parent="@style/PhotoOverlayButton">
+        <item name="android:background">@drawable/photo_overlay_btn_right</item>
+    </style>
+    <style name="Theme.WhiteText" parent="@style/Theme.Facebook">
+        <item name="android:textColorPrimary">@android:color/primary_text_dark</item>
+    </style>
+    <style name="Theme.DialogNoTitle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="Theme.FacebookDialogTransparent" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/clear</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    <style name="Theme.FacebookDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <style name="Theme.FacebookDialogSimple" parent="@android:style/Theme.Dialog" />
+    <style name="System_Notifications.Title" parent="@style/System_Notifications">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+    <style name="System_Notifications">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+    <style name="bookmark_item_text">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textColor">@color/bookmark_text</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+    <style name="bookmark_divider_text">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff777d8c</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:shadowColor">#7f000000</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+        <item name="android:capitalize">characters</item>
+    </style>
+    <style name="publisher_button_text">
+        <item name="android:textSize">11.299988sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff6c6f77</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:focusable">true</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="dialog_text">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    
 </resources>
