@@ -15,7 +15,7 @@ package com.yh.shopkeeper.adapter;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import com.yh.taobao.fkw.utils.ImageDownloader;
+import com.yh.android.taobao.fkw.utils.ImageDownloader;
 
 import android.view.View;
 import android.view.ViewGroup;

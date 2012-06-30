@@ -1,8 +1,8 @@
 package com.yh.shopkeeper.activity;
 
+import com.yh.android.taobao.fkw.utils.ImageDownloader;
 import com.yh.shopkeeper.R;
 import com.yh.shopkeeper.adapter.ImageAdapter;
-import com.yh.taobao.fkw.utils.ImageDownloader;
 
 import android.app.ListActivity;
 

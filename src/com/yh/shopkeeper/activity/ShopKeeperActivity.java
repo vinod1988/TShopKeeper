@@ -1,11 +1,11 @@
 package com.yh.shopkeeper.activity;
 
-import org.springframework.social.connect.ConnectionRepository;
+import com.yh.android.framework.social.connect.ConnectionRepository;
+import com.yh.android.taobao.fkw.api.OpenTaoBao;
 
 import com.taobao.api.domain.Shop;
 import com.yh.shopkeeper.AbstractAsyncActivity;
 import com.yh.shopkeeper.R;
-import com.yh.taobao.fkw.api.OpenTaoBao;
 
 import android.content.Context;
 import android.content.Intent;
@@ -30,24 +30,26 @@ public class ShopKeeperActivity extends AbstractAsyncActivity {
 		this.connectionRepository = getApplicationContext().getConnectionRepository();
 		this.btnStart=(Button)this.findViewById(R.id.button2);
 		this.beginOuathBtn=  (Button) findViewById(R.id.button1);
-		
-		
-		
+
 	}
 	
 	@Override
 	public void onStart() {
 		super.onStart();
 		if (isConnected()) {
+			this.beginOuathBtn.setVisibility(View.GONE);
+			this.btnStart.setVisibility(View.VISIBLE);
 			this.openTaoBao = connectionRepository.findPrimaryConnection(OpenTaoBao.class).getApi();
 			new ShopTask(getApplicationContext()).execute();
-			btnStart.setOnClickListener(new Button.OnClickListener(){
+			this.btnStart.setOnClickListener(new Button.OnClickListener(){
 			     public void onClick( View v ){   
 		        	Intent intent=new Intent(v.getContext(),ImageListActivity.class);
 		        	v.getContext().startActivity(intent);
 		        }
 		    });			
 		} else {
+			this.btnStart.setVisibility(View.GONE);
+			this.beginOuathBtn.setVisibility(View.VISIBLE);
 			showConnectOption();
 		}
 	}
@@ -76,8 +78,10 @@ public class ShopKeeperActivity extends AbstractAsyncActivity {
 	}
 	
 	private void displayList(Shop shop){
-		TextView txtView=(TextView) findViewById(R.id.textView1);
-		txtView.setText(shop.getDesc());
+		if(shop!=null){
+			TextView txtView=(TextView) findViewById(R.id.textView1);
+			txtView.setText(shop.getDesc());
+		}
 	}
 	
 	private class ShopTask extends AsyncTask<Void, Integer, Shop> {

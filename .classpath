@@ -4,14 +4,5 @@
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
-	<classpathentry kind="lib" path="libraries/android-support-v4.jar"/>
-	<classpathentry kind="lib" path="libraries/jackson-core-asl-1.9.6.jar"/>
-	<classpathentry kind="lib" path="libraries/jackson-mapper-asl-1.9.6.jar"/>
-	<classpathentry kind="lib" path="libraries/mbaoV20110627.jar"/>
-	<classpathentry kind="lib" path="libraries/spring-android-auth-1.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="libraries/spring-android-core-1.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="libraries/spring-android-rest-template-1.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="libraries/spring-security-crypto-3.1.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="libraries/spring-social-core-1.0.2.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

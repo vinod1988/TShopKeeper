@@ -1,14 +1,14 @@
 package com.yh.shopkeeper;
 
-import org.springframework.security.crypto.encrypt.AndroidEncryptors;
-import org.springframework.social.connect.ConnectionRepository;
-import org.springframework.social.connect.sqlite.SQLiteConnectionRepository;
-import org.springframework.social.connect.sqlite.support.SQLiteConnectionRepositoryHelper;
-import org.springframework.social.connect.support.ConnectionFactoryRegistry;
+import com.yh.android.framework.security.crypto.encrypt.AndroidEncryptors;
+import com.yh.android.framework.social.connect.ConnectionRepository;
+import com.yh.android.framework.social.connect.sqlite.SQLiteConnectionRepository;
+import com.yh.android.framework.social.connect.sqlite.support.SQLiteConnectionRepositoryHelper;
+import com.yh.android.framework.social.connect.support.ConnectionFactoryRegistry;
+import com.yh.android.taobao.fkw.Constants;
+import com.yh.android.taobao.fkw.api.OpenTaoBao;
+import com.yh.android.taobao.fkw.connect.OpenTaoBaoConnectionFactory;
 
-import com.yh.taobao.fkw.Constants;
-import com.yh.taobao.fkw.api.OpenTaoBao;
-import com.yh.taobao.fkw.connect.OpenTaoBaoConnectionFactory;
 
 import android.app.Application;
 import android.database.sqlite.SQLiteOpenHelper;

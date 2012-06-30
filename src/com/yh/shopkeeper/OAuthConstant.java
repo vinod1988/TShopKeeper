@@ -1,6 +1,6 @@
 package com.yh.shopkeeper;
 
-import com.yh.taobao.fkw.TaoBaoAccessToken;
+import com.yh.android.taobao.fkw.TaoBaoAccessToken;
 
 
 public class OAuthConstant {

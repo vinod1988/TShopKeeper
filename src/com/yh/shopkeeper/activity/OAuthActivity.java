@@ -1,17 +1,17 @@
 package com.yh.shopkeeper.activity;
 
-import org.springframework.social.connect.Connection;
-import org.springframework.social.connect.ConnectionRepository;
-import org.springframework.social.connect.DuplicateConnectionException;
-import org.springframework.social.oauth2.AccessGrant;
-import org.springframework.social.oauth2.GrantType;
-import org.springframework.social.oauth2.OAuth2Parameters;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
+import com.yh.android.framework.social.connect.Connection;
+import com.yh.android.framework.social.connect.ConnectionRepository;
+import com.yh.android.framework.social.connect.DuplicateConnectionException;
+import com.yh.android.framework.social.oauth2.AccessGrant;
+import com.yh.android.framework.social.oauth2.GrantType;
+import com.yh.android.framework.social.oauth2.OAuth2Parameters;
+import com.yh.android.framework.util.LinkedMultiValueMap;
+import com.yh.android.framework.util.MultiValueMap;
+import com.yh.android.taobao.fkw.api.OpenTaoBao;
+import com.yh.android.taobao.fkw.connect.OpenTaoBaoConnectionFactory;
 
 import com.yh.shopkeeper.AbstractWebViewActivity;
-import com.yh.taobao.fkw.api.OpenTaoBao;
-import com.yh.taobao.fkw.connect.OpenTaoBaoConnectionFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.content.Intent;
