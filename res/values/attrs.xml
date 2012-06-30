@@ -3,7 +3,6 @@
     <attr name="type" format="integer" />
     <attr name="radius" format="float" />
     <attr name="childNames" format="reference" />
-    <attr name="icon" format="reference" />
     <attr name="text" format="reference|string" />
     <attr name="textColor" format="reference|color" />
     <attr name="handleImage_normal" format="reference" />
