@@ -1,10 +1,12 @@
 package com.yh.shopkeeper.activity;
 
 import org.springframework.social.connect.ConnectionRepository;
-import com.hy.shopkeeper.common.AbstractAsyncActivity;
-import com.hy.shopkeeper.fkw.api.OpenTaoBao;
+
 import com.taobao.api.domain.Shop;
+import com.yh.shopkeeper.AbstractAsyncActivity;
 import com.yh.shopkeeper.R;
+import com.yh.taobao.fkw.api.OpenTaoBao;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="common_color_layout_background">#ffcccccc</color>
+    <color name="common_color_white">#ffffffff</color>
+    <color name="common_color_orange">#fff7941d</color>
+    <color name="common_color_red">#ffff4e31</color>
+    <color name="common_color_redlow">#aafdf8f3</color>
+    <color name="common_color_brown">#ff5b1208</color>
+    <color name="common_color_black">#ff676767</color>
+    <color name="common_color_blackh">#ff000000</color>
+    <color name="common_color_yellow">#ffff7800</color>
+    <color name="common_color_gray">#ff7f8081</color>
+    <color name="common_color_diapha">#00000000</color>
+    <color name="common_color_diaphab">#bb000000</color>
+    <color name="common_dividingline">#ff444444</color>
+    <color name="common_dividingline1">#ff888888</color>
+    <color name="common_dividingline2">#ffe6e6e6</color>
+    <color name="common_dividingline3">#ffb2958e</color>
+    <color name="hint_textcolor">#c07f8081</color>
+    <color name="date_text_color_weekend">#ffff4e31</color>
+    <color name="date_text_color_workday">#ff5b1208</color>
+    <color name="date_text_color_disable">#ffc4c4c4</color>
+</resources>

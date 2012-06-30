@@ -9,15 +9,9 @@ import org.springframework.social.oauth2.OAuth2Parameters;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
-import com.hy.shopkeeper.common.AbstractWebViewActivity;
-import com.hy.shopkeeper.fkw.Constants;
-import com.hy.shopkeeper.fkw.TaoBao;
-import com.hy.shopkeeper.fkw.TaoBaoAccessToken;
-import com.hy.shopkeeper.fkw.TaoBaoException;
-import com.hy.shopkeeper.fkw.TaoBaoParameter;
-import com.hy.shopkeeper.fkw.api.OpenTaoBao;
-import com.hy.shopkeeper.fkw.connect.OpenTaoBaoConnectionFactory;
-import com.hy.shopkeeper.org.json.JSONException;
+import com.yh.shopkeeper.AbstractWebViewActivity;
+import com.yh.taobao.fkw.api.OpenTaoBao;
+import com.yh.taobao.fkw.connect.OpenTaoBaoConnectionFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.content.Intent;

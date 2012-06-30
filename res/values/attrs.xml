@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="type" format="integer" />
+    <attr name="radius" format="float" />
+    <attr name="childNames" format="reference" />
+    <attr name="icon" format="reference" />
+    <attr name="text" format="reference|string" />
+    <attr name="textColor" format="reference|color" />
+    <attr name="handleImage_normal" format="reference" />
+    <attr name="handleImage_selected" format="reference" />
+    <attr name="handleText" format="reference|string" />
+    <attr name="animationDuration" format="integer" />
+    <attr name="position">
+        <enum name="top" value="0" />
+        <enum name="bottom" value="1" />
+        <enum name="left" value="2" />
+        <enum name="right" value="3" />
+    </attr>
+    <attr name="handleTitle" format="reference" />
+    <attr name="handle" format="reference" />
+    <attr name="content" format="reference" />
+    <attr name="linearFlying" format="boolean" />
+    <attr name="weight" format="fraction" />
+    <attr name="openedHandle" format="reference|color" />
+    <attr name="closedHandle" format="reference|color" />
+    <attr name="closedTitle" format="reference" />
+    <attr name="segmentedNames" format="reference" />
+</resources>
