@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.yh.shopkeeper.R;
+import com.yh.shopkeeper.activity.AboutActivity;
 
 import android.app.Activity;
 import android.app.AlertDialog.Builder;

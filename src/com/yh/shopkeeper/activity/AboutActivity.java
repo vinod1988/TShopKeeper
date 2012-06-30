@@ -1,4 +1,4 @@
-package com.yh.shopkeeper;
+package com.yh.shopkeeper.activity;
 
 import android.app.Activity;
 

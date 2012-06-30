@@ -29,9 +29,9 @@
         
          <activity android:name=".activity.OAuthActivity">
          </activity>
-         <activity android:name=".AboutActivity">
+         <activity android:name=".activity.AboutActivity">
          </activity>
-         <activity android:name=".ImageListActivity" />
+         <activity android:name=".activity.ImageListActivity" />
     </application>
 
 </manifest>
