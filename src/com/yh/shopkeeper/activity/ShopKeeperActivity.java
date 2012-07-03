@@ -6,6 +6,7 @@ import com.yh.android.taobao.fkw.api.OpenTaoBao;
 import com.taobao.api.domain.Shop;
 import com.yh.shopkeeper.AbstractAsyncActivity;
 import com.yh.shopkeeper.R;
+import com.yh.shopkeeper.activity.fragment.SampleList;
 
 import android.content.Context;
 import android.content.Intent;
@@ -42,7 +43,7 @@ public class ShopKeeperActivity extends AbstractAsyncActivity {
 			new ShopTask(getApplicationContext()).execute();
 			this.btnStart.setOnClickListener(new Button.OnClickListener(){
 			     public void onClick( View v ){   
-		        	Intent intent=new Intent(v.getContext(),MainActivity.class);
+		        	Intent intent=new Intent(v.getContext(),SampleList.class);
 		        	v.getContext().startActivity(intent);
 		        }
 		    });			
