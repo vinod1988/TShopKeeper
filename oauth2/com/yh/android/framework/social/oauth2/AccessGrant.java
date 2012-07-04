@@ -17,6 +17,8 @@ package com.yh.android.framework.social.oauth2;
 
 import java.io.Serializable;
 
+import javax.crypto.spec.SecretKeySpec;
+
 /**
  * OAuth2 access token.
  * @author Keith Donald
@@ -31,6 +33,11 @@ public class AccessGrant implements Serializable {
 	private final String refreshToken;
 	
 	private final Long expireTime;
+	
+	 private String mOauth_verifier = "";
+	 private String mOauth_Token_Secret = "";
+	 private String[] responseStr = null;
+	 private SecretKeySpec mSecretKeySpec;
 
 	public AccessGrant(String accessToken) {
 		this(accessToken, null, null, null);
@@ -42,6 +49,16 @@ public class AccessGrant implements Serializable {
 		this.refreshToken = refreshToken;
 		this.expireTime = expiresIn != null ? System.currentTimeMillis() + expiresIn * 1000l : null;
 	}
+	
+	 public AccessGrant(String accessToken, String scope, String refreshToken, Integer expiresIn,String secret) {
+		 this.accessToken = accessToken;
+			this.scope = scope;
+			this.refreshToken = refreshToken;
+			this.expireTime = expiresIn != null ? System.currentTimeMillis() + expiresIn * 1000l : null;
+			this.mOauth_Token_Secret = secret;
+	}
+
+	
 
 	/**
 	 * The access token value.
@@ -74,4 +91,35 @@ public class AccessGrant implements Serializable {
 		return expireTime;
 	}
 	
+	
+    public void setVerifier(String verifier) {
+        mOauth_verifier = verifier;
+    }
+
+    public String getVerifier() {
+        return mOauth_verifier;
+    }
+
+    public String getSecret() {
+        return mOauth_Token_Secret;
+    }
+	
+	public String getParameter(String parameter) {
+        String value = null;
+        for (String str : responseStr) {
+            if (str.startsWith(parameter + '=')) {
+                value = str.split("=")[1].trim();
+                break;
+            }
+        }
+        return value;
+    }
+
+	public void setSecretKeySpec(SecretKeySpec secretKeySpec) {
+        this.mSecretKeySpec = secretKeySpec;
+    }
+
+	public SecretKeySpec getSecretKeySpec() {
+        return mSecretKeySpec;
+    }
 }

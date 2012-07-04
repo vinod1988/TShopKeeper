@@ -1,5 +1,6 @@
 package com.yh.android.weibo.fkw.connect;
 
+import com.weibo.net.WeiboOAuth2;
 import com.yh.android.framework.social.connect.ApiAdapter;
 import com.yh.android.framework.social.connect.ConnectionValues;
 import com.yh.android.framework.social.connect.UserProfile;
@@ -18,7 +19,7 @@ public class OpenWeiBoAdapter implements ApiAdapter<OpenWeiBo> {
 		User profile=null;
 		try {
 			Weibo weibo = OAuthConstant.getInstance().getWeibo();
-			weibo.setToken(OAuthConstant.getInstance().getToken(), OAuthConstant.getInstance().getTokenSecret());			
+			weibo.setToken(WeiboOAuth2.getInstance().getAccessToken().getToken(), WeiboOAuth2.getInstance().getAccessToken().getSecret());			
 			User user = weibo.verifyCredentials();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -27,7 +28,6 @@ public class OpenWeiBoAdapter implements ApiAdapter<OpenWeiBo> {
 		if(profile!=null){
 			values.setDisplayName(profile.getScreenName());
 		}
-		
 	}
 
 
@@ -42,7 +42,7 @@ public class OpenWeiBoAdapter implements ApiAdapter<OpenWeiBo> {
 		User profile = null;
 		try {
 			Weibo weibo = OAuthConstant.getInstance().getWeibo();
-			weibo.setToken(OAuthConstant.getInstance().getToken(), OAuthConstant.getInstance().getTokenSecret());			
+			weibo.setToken(WeiboOAuth2.getInstance().getAccessToken().getToken(), WeiboOAuth2.getInstance().getAccessToken().getSecret());			
 			User user = weibo.verifyCredentials();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

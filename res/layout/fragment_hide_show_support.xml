@@ -48,7 +48,7 @@
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="Hide" />
 
-        <fragment android:name="com.actionbarsherlock.sample.fragments.FragmentHideShowSupport$SecondFragment"
+        <fragment android:name="com.yh.shopkeeper.activity.fragment.FragmentHideShowSupport$SecondFragment"
                 android:id="@+id/fragment2" android:layout_weight="1"
                 android:layout_width="0px" android:layout_height="wrap_content" />
 

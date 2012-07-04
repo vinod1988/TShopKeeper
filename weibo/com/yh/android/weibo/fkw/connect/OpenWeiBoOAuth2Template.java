@@ -33,7 +33,7 @@ public class OpenWeiBoOAuth2Template implements OAuth2Operations {
 
 	public OpenWeiBoOAuth2Template(String clientId, String clientSecret) {
 		//clientId, clientSecret, "https://oauth.taobao.com/authorize", 
-		this(clientId, clientSecret, "https://api.weibo.com/oauth2/authorize", null, "https://api.weibo.com/oauth2/access_token");
+		this(clientId, clientSecret, "https://api.weibo.com/oauth2/authorize", "https://api.weibo.com/oauth2/authenticate", "https://api.weibo.com/oauth2/access_token");
 	}
 	
 	public OpenWeiBoOAuth2Template(String clientId, String clientSecret, String authorizeUrl, String authenticateUrl, String accessTokenUrl) {

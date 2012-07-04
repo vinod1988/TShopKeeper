@@ -123,11 +123,6 @@ public class OAuthActivity extends AbstractAsyncActivity {
 									
 				AccessGrant accessGrant=connectionFactory.getOAuthOperations().exchangeForAccess(authorizationCode, callbackURL, additionalParameters);
 				
-				//TaoBaoAccessToken token=TaoBao.requestAccessToken(authorizationCode);
-				//Create the connection and persist it to the repository
-				//OAuthConstant.getInstance().setTaobaoAccessToken(token);				
-				//Create the connection and persist it to the repository
-				//AccessGrant accessGrant = new AccessGrant(token.getAccessToken());
 				Connection<OpenTaoBao> connection = connectionFactory.createConnection(accessGrant);
 				try {
 					connectionRepository.addConnection(connection);

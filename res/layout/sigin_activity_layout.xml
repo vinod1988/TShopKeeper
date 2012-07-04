@@ -30,5 +30,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="微博登录" />
+     
+      <Button
+        android:id="@+id/btnGetWeiBo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="刷新微博" />
     
 </LinearLayout>
