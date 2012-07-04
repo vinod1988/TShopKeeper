@@ -63,8 +63,20 @@ public class Weibo extends WeiboSupport implements java.io.Serializable {
 	
 	private String baseURL = Configuration.getScheme() + "api.t.sina.com.cn/";
 	private String searchBaseURL = Configuration.getScheme() + "api.t.sina.com.cn/";
+	
 	private static final long serialVersionUID = -1486360080128882436L;
 
+	public String doGet(String url,PostParameter[] postParameters){
+		String res="";
+		try {
+			Response response=get(url,postParameters,true);
+			res=response.asString();
+		} catch (WeiboException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return res;
+	}
 	//----------------------------收藏接口----------------------------------------
 
 	/**

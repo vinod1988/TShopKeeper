@@ -8,6 +8,9 @@ import com.yh.android.framework.social.connect.support.ConnectionFactoryRegistry
 import com.yh.android.taobao.fkw.Constants;
 import com.yh.android.taobao.fkw.api.OpenTaoBao;
 import com.yh.android.taobao.fkw.connect.OpenTaoBaoConnectionFactory;
+import com.yh.android.weibo.Weibo;
+import com.yh.android.weibo.fkw.api.OpenWeiBo;
+import com.yh.android.weibo.fkw.connect.OpenWeiBoConnectionFactory;
 
 
 import android.app.Application;
@@ -30,6 +33,9 @@ public class MainApplication extends Application {
 		this.connectionFactoryRegistry = new ConnectionFactoryRegistry();
 		this.connectionFactoryRegistry.addConnectionFactory(new OpenTaoBaoConnectionFactory(getOpenTaoBaoAppId(),
 				getOpenTaoBaoAppSecret()));
+		
+		this.connectionFactoryRegistry.addConnectionFactory(new OpenWeiBoConnectionFactory(getOpenWeiBoAppId(),
+				getOpenWeiBoAppSecret()));
 
 		// set up the database and encryption
 		this.repositoryHelper = new SQLiteConnectionRepositoryHelper(this);
@@ -47,6 +53,17 @@ public class MainApplication extends Application {
 	private String getOpenTaoBaoAppSecret() {
 		return Constants.CONSUMER_SECRET;
 	}
+	
+	// ***************************************
+	// Private methods
+	// ***************************************
+	private String getOpenWeiBoAppId() {
+		return Weibo.CONSUMER_KEY;
+	}
+
+	private String getOpenWeiBoAppSecret() {
+		return Weibo.CONSUMER_SECRET;
+	}
 
 	// ***************************************
 	// Public methods
@@ -57,6 +74,10 @@ public class MainApplication extends Application {
 
 	public OpenTaoBaoConnectionFactory getOpenTaoBaoConnectionFactory() {
 		return (OpenTaoBaoConnectionFactory) this.connectionFactoryRegistry.getConnectionFactory(OpenTaoBao.class);
+	}
+	
+	public OpenWeiBoConnectionFactory getOpenWeiBoConnectionFactory() {
+		return (OpenWeiBoConnectionFactory) this.connectionFactoryRegistry.getConnectionFactory(OpenWeiBo.class);
 	}
 
 }

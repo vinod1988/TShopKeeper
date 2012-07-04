@@ -24,5 +24,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Start" />
-
+    
+     <Button
+        android:id="@+id/btnWeiBo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="微博登录" />
+    
 </LinearLayout>

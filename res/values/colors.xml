@@ -143,4 +143,8 @@
     <color name="find_friends_add_friend_green">#c0669900</color>
     <color name="list_unselected_background">#99eeeeee</color>
     
+    <color name="transparent">#00000000</color>
+    <color name="text_num_gray">#333</color>
+    <color name="dialog_title_blue">#9CCCF7</color>
+    
 </resources>
