@@ -2,6 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="abs"/>
+	<classpathentry kind="src" path="oauth2"/>
+	<classpathentry kind="src" path="taobao"/>
+	<classpathentry kind="src" path="weibo"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry kind="src" path="gen"/>
@@ -12,5 +15,8 @@
 	<classpathentry kind="lib" path="libs/mbaoV20110627.jar"/>
 	<classpathentry kind="lib" path="libs/nineoldandroids-2.2.0.jar"/>
 	<classpathentry kind="lib" path="libs/simple-xml-2.6.2.jar"/>
+	<classpathentry kind="lib" path="libs/commons-codec.jar"/>
+	<classpathentry kind="lib" path="libs/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="libs/commons-logging-1.1.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
