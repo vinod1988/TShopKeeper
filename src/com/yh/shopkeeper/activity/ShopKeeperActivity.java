@@ -78,8 +78,16 @@ public class ShopKeeperActivity extends AbstractAsyncActivity {
 					v.getContext().startActivity(intent);
 				}
 			});
-
-			Button btnGetWeiBo = (Button) findViewById(R.id.btnGetWeiBo);
+		} else {
+			this.btnStart.setVisibility(View.GONE);
+			this.beginOuathBtn.setVisibility(View.VISIBLE);
+			showConnectOption();
+		}
+		
+		Button btnGetWeiBo = (Button) findViewById(R.id.btnGetWeiBo);
+		
+		if(isWeiBoConnected()){
+			btnGetWeiBo.setVisibility(View.GONE);
 			
 			btnGetWeiBo.setOnClickListener(new Button.OnClickListener() {
 				public void onClick(View v) {
@@ -97,7 +105,6 @@ public class ShopKeeperActivity extends AbstractAsyncActivity {
 										1, 20));
 							} catch (com.yh.android.weibo.WeiboException e) {
 								// TODO Auto-generated catch block
-								e.printStackTrace();
 							}
 							StringBuilder stringBuilder = new StringBuilder("");
 							for (Status status : friendsTimeline) {
@@ -115,11 +122,8 @@ public class ShopKeeperActivity extends AbstractAsyncActivity {
 					}
 				}
 			});
-
-		} else {
-			this.btnStart.setVisibility(View.GONE);
-			this.beginOuathBtn.setVisibility(View.VISIBLE);
-			showConnectOption();
+		}else{
+			btnGetWeiBo.setVisibility(View.VISIBLE);
 		}
 	}
 
@@ -215,9 +219,9 @@ public class ShopKeeperActivity extends AbstractAsyncActivity {
 				// connection already exists in repository!
 			}
 	
-			//Intent intent = new Intent();
-			//intent.setClass(ShopKeeperActivity.this, TestActivity.class);
-			//startActivity(intent);
+			Intent intent = new Intent();
+			intent.setClass(ShopKeeperActivity.this, TestActivity.class);
+			startActivity(intent);
 		}
 
 		@Override

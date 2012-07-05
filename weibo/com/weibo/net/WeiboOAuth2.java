@@ -40,7 +40,7 @@ import android.webkit.CookieSyncManager;
  */
 public class WeiboOAuth2 {
 
-    // public static String SERVER = "http://api.t.sina.com.cn/";
+    // public static String 
     public static String SERVER = "https://api.weibo.com/2/";
     public static String URL_OAUTH_TOKEN = "http://api.t.sina.com.cn/oauth/request_token";
     public static String URL_AUTHORIZE = "http://api.t.sina.com.cn/oauth/authorize";
