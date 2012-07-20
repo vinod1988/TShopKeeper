@@ -1,0 +1,70 @@
+<com.yh.shopkeeper.ui.widget.DashboardLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <Button
+        android:id="@+id/home_btn_order"
+        style="@style/DashboardButton"
+         android:background="@drawable/btn_tag_suggestion"
+        android:drawableTop="@drawable/fb_app_chat"
+        android:text="@string/label_order" />
+
+    <Button
+        android:id="@+id/home_btn_bl"
+        style="@style/DashboardButton"
+         android:background="@drawable/btn_tag_suggestion"
+        android:drawableTop="@drawable/fb_app_newsfeed"
+        android:text="@string/label_bl" />
+
+    <Button
+        android:id="@+id/home_btn_shipping"
+        style="@style/DashboardButton"
+         android:background="@drawable/btn_tag_suggestion"
+        android:drawableTop="@drawable/fb_app_nearby"
+        android:text="@string/label_shipping" />
+
+    <Button
+        android:id="@+id/home_btn_production"
+        style="@style/DashboardButton"
+         android:background="@drawable/btn_tag_suggestion"
+        android:drawableTop="@drawable/fb_app_friends"
+        android:text="@string/label_production" />
+
+ 
+    <Button
+        android:id="@+id/home_btn_showcase"
+        style="@style/DashboardButton"
+         android:background="@drawable/btn_tag_suggestion"
+        android:drawableTop="@drawable/fb_app_help"
+        android:text="@string/label_showcase" />
+
+    <Button
+        android:id="@+id/home_btn_instock"
+        style="@style/DashboardButton"
+         android:background="@drawable/btn_tag_suggestion"
+        android:drawableTop="@drawable/fb_app_events"
+        android:text="@string/label_instock" />
+
+     
+    <Button
+        android:id="@+id/home_btn_comment"
+        style="@style/DashboardButton"
+         android:background="@drawable/btn_tag_suggestion"
+        android:drawableTop="@drawable/fb_app_notes"
+        android:text="@string/label_comment" />
+
+    
+    <Button
+        android:id="@+id/home_btn_notification"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/fb_app_messages"
+        android:background="@drawable/btn_tag_suggestion"
+        android:text="@string/label_notification" />
+    <Button
+        android:id="@+id/home_btn_setting"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/fb_app_photos"
+        android:background="@drawable/btn_tag_suggestion"
+        android:text="@string/label_setting" />
+
+</com.yh.shopkeeper.ui.widget.DashboardLayout>

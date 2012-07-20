@@ -147,4 +147,6 @@
     <color name="text_num_gray">#333</color>
     <color name="dialog_title_blue">#9CCCF7</color>
     
+    <color name="accent_1">#ff29549f</color>
+    
 </resources>

@@ -21,11 +21,13 @@ import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.ArrayAdapter;
 import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.ActionBar.Tab;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.yh.shopkeeper.R;
+import com.yh.shopkeeper.activity.fragment.FragmentDashBoard;
 
 import static com.actionbarsherlock.app.ActionBar.OnNavigationListener;
 import static com.actionbarsherlock.view.MenuItem.OnMenuItemClickListener;
@@ -33,8 +35,6 @@ import static com.actionbarsherlock.view.MenuItem.OnMenuItemClickListener;
 public class MainActivity extends SherlockFragmentActivity implements ActionBar.TabListener {
 
     private final Handler handler = new Handler();
-    private RoundedColourFragment leftFrag;
-    private RoundedColourFragment rightFrag;
     private boolean useLogo = false;
     private boolean showHomeUp = false;
 
@@ -48,40 +48,13 @@ public class MainActivity extends SherlockFragmentActivity implements ActionBar.
         // set defaults for logo & home up
         ab.setDisplayHomeAsUpEnabled(showHomeUp);
         ab.setDisplayUseLogoEnabled(useLogo);
-
-        // set up tabs nav
-        for (int i = 1; i < 4; i++) {
-            ab.addTab(ab.newTab().setText("Tab " + i).setTabListener(this));
-        }
-
-        // set up list nav
-        ab.setListNavigationCallbacks(ArrayAdapter
-                .createFromResource(this, R.array.sections,
-                        R.layout.sherlock_spinner_dropdown_item),
-                new OnNavigationListener() {
-                    public boolean onNavigationItemSelected(int itemPosition,
-                            long itemId) {
-                        // FIXME add proper implementation
-                        rotateLeftFrag();
-                        return false;
-                    }
-                });
-
-        // default to tab navigation
-        showTabsNav();
-
-        // create a couple of simple fragments as placeholders
-        final int MARGIN = 16;
-        leftFrag = new RoundedColourFragment(getResources().getColor(
-                R.color.android_green), 1f, MARGIN, MARGIN / 2, MARGIN, MARGIN);
-        rightFrag = new RoundedColourFragment(getResources().getColor(
-                R.color.honeycombish_blue), 2f, MARGIN / 2, MARGIN, MARGIN,
-                MARGIN);
-
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.add(R.id.root, leftFrag);
-        ft.add(R.id.root, rightFrag);
-        ft.commit();
+             
+        //FragmentDashBoard dashBoardFrag= new FragmentDashBoard();
+        
+        //FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        //ft.add(R.id.root, dashBoardFrag);
+        
+       //ft.commit();
     }
 
     @Override
@@ -115,19 +88,6 @@ public class MainActivity extends SherlockFragmentActivity implements ActionBar.
             // switch to a progress animation
             item.setActionView(R.layout.indeterminate_progress_action);
             return true;
-        case R.id.menu_both:
-            // rotation animation of green fragment
-            rotateLeftFrag();
-            return true;
-        case R.id.menu_text:
-            // alpha animation of blue fragment
-            ObjectAnimator alpha = ObjectAnimator.ofFloat(rightFrag.getView(),
-                    "alpha", 1f, 0f);
-            alpha.setRepeatMode(ObjectAnimator.REVERSE);
-            alpha.setRepeatCount(1);
-            alpha.setDuration(800);
-            alpha.start();
-            return true;
         case R.id.menu_logo:
             useLogo = !useLogo;
             item.setChecked(useLogo);
@@ -140,7 +100,6 @@ public class MainActivity extends SherlockFragmentActivity implements ActionBar.
             return true;
         case R.id.menu_nav_tabs:
             item.setChecked(true);
-            showTabsNav();
             return true;
         case R.id.menu_nav_label:
             item.setChecked(true);
@@ -163,13 +122,6 @@ public class MainActivity extends SherlockFragmentActivity implements ActionBar.
         }
     }
 
-    private void rotateLeftFrag() {
-        if (leftFrag != null) {
-            ObjectAnimator.ofFloat(leftFrag.getView(), "rotationY", 0, 180)
-                    .setDuration(500).start();
-        }
-    }
-
     private void showStandardNav() {
         ActionBar ab = getSupportActionBar();
         if (ab.getNavigationMode() != ActionBar.NAVIGATION_MODE_STANDARD) {
@@ -186,26 +138,21 @@ public class MainActivity extends SherlockFragmentActivity implements ActionBar.
         }
     }
 
-    private void showTabsNav() {
-        ActionBar ab = getSupportActionBar();
-        if (ab.getNavigationMode() != ActionBar.NAVIGATION_MODE_TABS) {
-            ab.setDisplayShowTitleEnabled(false);
-            ab.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        }
-    }
+	@Override
+	public void onTabSelected(Tab tab, FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+		
+	}
 
-    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
-        // FIXME add a proper implementation, for now just rotate the left
-        // fragment
-        rotateLeftFrag();
-    }
+	@Override
+	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+		
+	}
 
-    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
-        // FIXME implement this
-    }
-
-    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
-        // FIXME implement this
-    }
-
+	@Override
+	public void onTabReselected(Tab tab, FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+		
+	}
 }
