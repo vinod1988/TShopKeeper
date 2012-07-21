@@ -125,7 +125,6 @@
 					android:id="@+id/ivImage"
 					android:layout_width="fill_parent"
 					android:layout_height="fill_parent"
-					android:src="@drawable/dota"
 					android:background="@drawable/image_background"
 					android:layout_gravity="center"
 					android:layout_margin="8dp"/>	

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.yh.shopkeeper"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+ 
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <org.taptwo.android.widget.CircleFlowIndicator
+		android:padding="10dip"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:id="@+id/viewflowindic"
+		android:layout_gravity="center_horizontal"
+		app:inactiveType="fill"
+		app:fadeOut="1000" />
+    </LinearLayout>
+    
+     
+    <org.taptwo.android.widget.ViewFlow
+        android:id="@+id/viewflow"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:duplicateParentState="true" >
+    </org.taptwo.android.widget.ViewFlow>
+    
+    
+</LinearLayout>

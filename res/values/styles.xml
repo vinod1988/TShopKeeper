@@ -41,249 +41,6 @@
         <item name="android:dropDownSelector">@drawable/ad_selectable_background</item>
     </style>
     
-    <style name="myStyle" parent="@android:style/Widget" />
-    <style name="myStyle.WhiteSmallText" parent="@style/myStyle">
-        <item name="android:textSize">12.0dip</item>
-        <item name="android:textColor">#ffffffff</item>
-    </style>
-    <style name="myStyle.WhiteNormalText" parent="@style/myStyle">
-        <item name="android:textSize">14.0dip</item>
-        <item name="android:textColor">#ffffffff</item>
-    </style>
-    <style name="myStyle.WhiteBigText" parent="@style/myStyle">
-        <item name="android:textSize">16.0dip</item>
-        <item name="android:textColor">#ffffffff</item>
-    </style>
-    <style name="myStyle.WhiteHugeText" parent="@style/myStyle">
-        <item name="android:textSize">20.0dip</item>
-        <item name="android:textColor">#ffffffff</item>
-    </style>
-    <style name="myStyle.WhiteContentTitleText" parent="@style/myStyle">
-        <item name="android:textSize">18.0dip</item>
-        <item name="android:textColor">#ffffffff</item>
-    </style>
-    <style name="myStyle.WhiteSuperHugeText" parent="@style/myStyle">
-        <item name="android:textSize">24.0dip</item>
-        <item name="android:textColor">#ffffffff</item>
-    </style>
-    <style name="myStyle.BrownSmallText" parent="@style/myStyle">
-        <item name="android:textSize">12.0dip</item>
-        <item name="android:textColor">#ff5b1208</item>
-    </style>
-    <style name="myStyle.BrownNormalText" parent="@style/myStyle">
-        <item name="android:textSize">14.0dip</item>
-        <item name="android:textColor">#ff5b1208</item>
-    </style>
-    <style name="myStyle.BrownBigText" parent="@style/myStyle">
-        <item name="android:textSize">16.0dip</item>
-        <item name="android:textColor">#ff5b1208</item>
-    </style>
-    <style name="myStyle.BrownHugeText" parent="@style/myStyle">
-        <item name="android:textSize">20.0dip</item>
-        <item name="android:textColor">#ff5b1208</item>
-    </style>
-    <style name="myStyle.BrownContentTitleText" parent="@style/myStyle">
-        <item name="android:textSize">18.0dip</item>
-        <item name="android:textColor">#ff5b1208</item>
-    </style>
-    <style name="myStyle.BrownSuperHugeText" parent="@style/myStyle">
-        <item name="android:textSize">24.0dip</item>
-        <item name="android:textColor">#ff5b1208</item>
-    </style>
-    <style name="myStyle.BlackSmallText" parent="@style/myStyle">
-        <item name="android:textSize">12.0dip</item>
-        <item name="android:textColor">#ff000000</item>
-    </style>
-    <style name="myStyle.BlackNormalText" parent="@style/myStyle">
-        <item name="android:textSize">14.0dip</item>
-        <item name="android:textColor">#ff000000</item>
-    </style>
-    <style name="myStyle.BlackBigText" parent="@style/myStyle">
-        <item name="android:textSize">16.0dip</item>
-        <item name="android:textColor">#ff000000</item>
-    </style>
-    <style name="myStyle.BlackHugeText" parent="@style/myStyle">
-        <item name="android:textSize">20.0dip</item>
-        <item name="android:textColor">#ff000000</item>
-    </style>
-    <style name="myStyle.BlackSuperHugeText" parent="@style/myStyle">
-        <item name="android:textSize">24.0dip</item>
-        <item name="android:textColor">#ff000000</item>
-    </style>
-    <style name="myStyle.BlackContentTitleText" parent="@style/myStyle">
-        <item name="android:textSize">18.0dip</item>
-        <item name="android:textColor">#ff000000</item>
-    </style>
-    <style name="myStyle.GraySmallText" parent="@style/myStyle">
-        <item name="android:textSize">12.0dip</item>
-        <item name="android:textColor">#ff7f8081</item>
-    </style>
-    <style name="myStyle.GrayNormalText" parent="@style/myStyle">
-        <item name="android:textSize">14.0dip</item>
-        <item name="android:textColor">#ff7f8081</item>
-    </style>
-    <style name="myStyle.GrayBigText" parent="@style/myStyle">
-        <item name="android:textSize">16.0dip</item>
-        <item name="android:textColor">#ff7f8081</item>
-    </style>
-    <style name="myStyle.GrayBigText1" parent="@style/myStyle">
-        <item name="android:textSize">16.0dip</item>
-        <item name="android:textColor">#ff666666</item>
-    </style>
-    <style name="myStyle.GrayHugeText" parent="@style/myStyle">
-        <item name="android:textSize">20.0dip</item>
-        <item name="android:textColor">#ff7f8081</item>
-    </style>
-    <style name="myStyle.GrayHugeText1" parent="@style/myStyle">
-        <item name="android:textSize">20.0dip</item>
-        <item name="android:textColor">#ff666666</item>
-    </style>
-    <style name="myStyle.GraySuperHugeText" parent="@style/myStyle">
-        <item name="android:textSize">24.0dip</item>
-        <item name="android:textColor">#ff7f8081</item>
-    </style>
-    <style name="myStyle.GrayContentTitleText" parent="@style/myStyle">
-        <item name="android:textSize">18.0dip</item>
-        <item name="android:textColor">#ff7f8081</item>
-    </style>
-    <style name="myStyle.DeepGraySmallText" parent="@style/myStyle">
-        <item name="android:textSize">12.0dip</item>
-        <item name="android:textColor">#ff666666</item>
-    </style>
-    <style name="myStyle.DeepGrayNormalText" parent="@style/myStyle">
-        <item name="android:textSize">14.0dip</item>
-        <item name="android:textColor">#ff666666</item>
-    </style>
-    <style name="myStyle.DeepGrayBigText" parent="@style/myStyle">
-        <item name="android:textSize">16.0dip</item>
-        <item name="android:textColor">#ff666666</item>
-    </style>
-    <style name="myStyle.DeepGrayHugeText" parent="@style/myStyle">
-        <item name="android:textSize">20.0dip</item>
-        <item name="android:textColor">#ff666666</item>
-    </style>
-    <style name="myStyle.DeepGraySuperHugeText" parent="@style/myStyle">
-        <item name="android:textSize">24.0dip</item>
-        <item name="android:textColor">#ff666666</item>
-    </style>
-    <style name="myStyle.DeepGrayContentTitleText" parent="@style/myStyle">
-        <item name="android:textSize">18.0dip</item>
-        <item name="android:textColor">#ff666666</item>
-    </style>
-    <style name="myStyle.OrangeSmallText" parent="@style/myStyle">
-        <item name="android:textSize">12.0dip</item>
-        <item name="android:textColor">#fff7941d</item>
-    </style>
-    <style name="myStyle.OrangeNormalText" parent="@style/myStyle">
-        <item name="android:textSize">14.0dip</item>
-        <item name="android:textColor">#fff7941d</item>
-    </style>
-    <style name="myStyle.OrangeBigText" parent="@style/myStyle">
-        <item name="android:textSize">16.0dip</item>
-        <item name="android:textColor">#fff7941d</item>
-    </style>
-    <style name="myStyle.OrangeHugeText" parent="@style/myStyle">
-        <item name="android:textSize">20.0dip</item>
-        <item name="android:textColor">#fff7941d</item>
-    </style>
-    <style name="myStyle.OrangeContentTitleText" parent="@style/myStyle">
-        <item name="android:textSize">18.0dip</item>
-        <item name="android:textColor">#fff7941d</item>
-    </style>
-    <style name="myStyle.OrangeSuperHugeText" parent="@style/myStyle">
-        <item name="android:textSize">24.0dip</item>
-        <item name="android:textColor">#ffff7800</item>
-    </style>
-    <style name="myStyle.BlueSmallText" parent="@style/myStyle">
-        <item name="android:textSize">12.0dip</item>
-        <item name="android:textColor">#ff0da6df</item>
-    </style>
-    <style name="myStyle.BlueNormalText" parent="@style/myStyle">
-        <item name="android:textSize">14.0dip</item>
-        <item name="android:textColor">#ff0da6df</item>
-    </style>
-    <style name="myStyle.BlueBigText" parent="@style/myStyle">
-        <item name="android:textSize">16.0dip</item>
-        <item name="android:textColor">#ff0da6df</item>
-    </style>
-    <style name="myStyle.BlueHugeText" parent="@style/myStyle">
-        <item name="android:textSize">20.0dip</item>
-        <item name="android:textColor">#ff0da6df</item>
-    </style>
-    <style name="myStyle.BlueContentTitleText" parent="@style/myStyle">
-        <item name="android:textSize">18.0dip</item>
-        <item name="android:textColor">#ff0da6df</item>
-    </style>
-    <style name="myStyle.RedSmallText" parent="@style/myStyle">
-        <item name="android:textSize">12.0dip</item>
-        <item name="android:textColor">#ffff4e31</item>
-    </style>
-    <style name="myStyle.RedNormalText" parent="@style/myStyle">
-        <item name="android:textSize">14.0dip</item>
-        <item name="android:textColor">#ffff4e31</item>
-    </style>
-    <style name="myStyle.RedBigText" parent="@style/myStyle">
-        <item name="android:textSize">16.0dip</item>
-        <item name="android:textColor">#ffff4e31</item>
-    </style>
-    <style name="myStyle.RedHugeText" parent="@style/myStyle">
-        <item name="android:textSize">20.0dip</item>
-        <item name="android:textColor">#ffff4e31</item>
-    </style>
-    <style name="myStyle.RedContentTitleText" parent="@style/myStyle">
-        <item name="android:textSize">18.0dip</item>
-        <item name="android:textColor">#ffff4e31</item>
-    </style>
-    <style name="myStyle.GreenSmallText" parent="@style/myStyle">
-        <item name="android:textSize">12.0dip</item>
-        <item name="android:textColor">#ff1dc6a8</item>
-    </style>
-    <style name="myStyle.GreenNormalText" parent="@style/myStyle">
-        <item name="android:textSize">14.0dip</item>
-        <item name="android:textColor">#ff1dc6a8</item>
-    </style>
-    <style name="myStyle.GreenBigText" parent="@style/myStyle">
-        <item name="android:textSize">16.0dip</item>
-        <item name="android:textColor">#ff1dc6a8</item>
-    </style>
-    <style name="myStyle.GreenHugeText" parent="@style/myStyle">
-        <item name="android:textSize">20.0dip</item>
-        <item name="android:textColor">#ff1dc6a8</item>
-    </style>
-    <style name="myStyle.GreenContentTitleText" parent="@style/myStyle">
-        <item name="android:textSize">18.0dip</item>
-        <item name="android:textColor">#ff1dc6a8</item>
-    </style>
-    <style name="myStyle.CustomDayText" parent="@style/myStyle">
-        <item name="android:textSize">28.0dip</item>
-        <item name="android:textColor">#ff000000</item>
-    </style>
-    <style name="myStyle.PanelHandleText" parent="@style/myStyle">
-        <item name="android:textSize">20.0dip</item>
-        <item name="android:textColor">#ff339933</item>
-    </style>
-    <style name="myStyle.OrderFillContactText" parent="@style/myStyle">
-        <item name="android:textSize">18.0dip</item>
-        <item name="android:textColor">#ff5b1208</item>
-    </style>
-    <style name="myStyle.UserCenterText" parent="@style/myStyle">
-        <item name="android:textSize">20.0dip</item>
-        <item name="android:textColor">#ff5b1208</item>
-    </style>
-    <style name="myStyle.UserCenterText2" parent="@style/myStyle">
-        <item name="android:textSize">16.0dip</item>
-        <item name="android:textColor">#ff5b1208</item>
-    </style>
-    <style name="myStyle.orderListText" parent="@style/myStyle">
-        <item name="android:textSize">14.0dip</item>
-        <item name="android:textColor">#ff333333</item>
-    </style>
-    <style name="dialog_router">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowFullscreen">false</item>
-    </style>
-    
      <style name="Theme.OrcaDialog" parent="@android:style/Theme">
         <item name="android:windowBackground">@drawable/orca_panel_background</item>
         <item name="android:windowFrame">@null</item>
@@ -329,15 +86,27 @@
         <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="Theme" parent="@android:style/Theme" />
-    <style name="Theme.FacebookDark" parent="@android:style/Theme.Black">
+    
+    
+    <!-- <style name="Theme.TaoBaoKeeper" parent="@android:style/Theme.Black">  -->
+    
+    <style name="Theme.TaoBaoKeeperDark" parent="@style/Theme.Sherlock.Light.DarkActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
-    <style name="Theme.Facebook" parent="@android:style/Theme.Light">
+    
+    <style name="Theme.TaoBaoKeeperDarkFullscreen" parent="@style/Theme.Sherlock.Light.DarkActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>   
+
+   <!-- <style name="Theme.TaoBaoKeeper" parent="@android:style/Theme.Light">  -->
+    <style name="Theme.TaoBaoKeeper" parent="@style/Theme.Sherlock.Light">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
-    <style name="Theme.Facebook.Preferences" parent="@style/Theme.Facebook" />
+    <style name="Theme.TaoBaoKeeper.Preferences" parent="@style/Theme.TaoBaoKeeper" />
     <style name="ActivityFadeInOut">
         <item name="android:activityOpenEnterAnimation">@anim/fade_in</item>
         <item name="android:activityOpenExitAnimation">@anim/hold</item>
@@ -350,13 +119,13 @@
         <item name="android:activityCloseEnterAnimation">@anim/hold</item>
         <item name="android:activityCloseExitAnimation">@anim/fade_out_fast</item>
     </style>
-    <style name="Theme.FacebookDarkFadeInOut" parent="@style/Theme.FacebookDark">
+    <style name="Theme.TaoBaoKeeperDarkFadeInOut" parent="@style/Theme.TaoBaoKeeperDark">
         <item name="android:windowAnimationStyle">@style/ActivityFadeInOut</item>
     </style>
-    <style name="Theme.FacebookFadeInOutFast" parent="@style/Theme.Facebook">
+    <style name="Theme.TaoBaoKeeperFadeInOutFast" parent="@style/Theme.TaoBaoKeeper">
         <item name="android:windowAnimationStyle">@style/ActivityFadeInOutFast</item>
     </style>
-    <style name="Theme.Transparent" parent="@style/Theme">
+    <style name="Theme.Transparent" parent="@style/Theme.TaoBaoKeeper">
         <item name="android:colorForeground">@drawable/solid_white</item>
         <item name="android:windowBackground">@drawable/clear</item>
         <item name="android:windowNoTitle">true</item>
@@ -376,24 +145,24 @@
     <style name="PhotoOverlayButtonRight" parent="@style/PhotoOverlayButton">
         <item name="android:background">@drawable/photo_overlay_btn_right</item>
     </style>
-    <style name="Theme.WhiteText" parent="@style/Theme.Facebook">
+    <style name="Theme.WhiteText" parent="@style/Theme.TaoBaoKeeper">
         <item name="android:textColorPrimary">@android:color/primary_text_dark</item>
     </style>
     <style name="Theme.DialogNoTitle" parent="@android:style/Theme.Dialog">
         <item name="android:windowNoTitle">true</item>
     </style>
-    <style name="Theme.FacebookDialogTransparent" parent="@android:style/Theme.Dialog">
+    <style name="Theme.TaoBaoKeeperDialogTransparent" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@drawable/clear</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowIsTranslucent">true</item>
     </style>
-    <style name="Theme.FacebookDialog" parent="@android:style/Theme.Dialog">
+    <style name="Theme.TaoBaoKeeperDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@null</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsFloating">true</item>
     </style>
-    <style name="Theme.FacebookDialogSimple" parent="@android:style/Theme.Dialog" />
+    <style name="Theme.TaoBaoKeeperDialogSimple" parent="@android:style/Theme.Dialog" />
     <style name="System_Notifications.Title" parent="@style/System_Notifications">
         <item name="android:textSize">18.0sp</item>
         <item name="android:textColor">#ff000000</item>
@@ -451,8 +220,8 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center_horizontal</item>
-        <item name="android:drawablePadding">2dp</item>
-        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:drawablePadding">20dp</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/accent_1</item>
         <item name="android:background">@null</item>

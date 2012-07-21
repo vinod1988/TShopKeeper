@@ -5,6 +5,7 @@
 	<classpathentry kind="src" path="oauth2"/>
 	<classpathentry kind="src" path="taobao"/>
 	<classpathentry kind="src" path="weibo"/>
+	<classpathentry kind="src" path="viewflow"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry kind="src" path="gen"/>

@@ -14,9 +14,9 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.READ_CONTACTS" />
-	<uses-permission android:name="android.permission.VIBRATE" />
-    
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <uses-feature
         android:name="android.hardware.touchscreen"
         android:required="false" />
@@ -26,196 +26,261 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar" >
+        
         <activity
-            android:name=".activity.ShopKeeperActivity"
-            android:label="@string/app_name" android:theme="@style/Theme.AndroidDevelopers">
+            android:name=".activity.LaunchActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.NewFunctionIntroActivity"
+            android:configChanges="locale|keyboardHidden|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+        </activity>
+        
         <activity
             android:name=".activity.MainActivity"
-            android:label="@string/app_name" 
-            android:theme="@style/Theme.AndroidDevelopers"
-            android:logo="@drawable/ad_logo">
+            android:label="@string/app_name"
+            android:logo="@drawable/ad_logo"
+            android:theme="@style/Theme.TaoBaoKeeper" >
+        </activity>
+        <activity
+            android:name=".activity.OAuthActivity"
+            android:label="@string/activity_login_taobao"
+            android:theme="@style/Theme.TaoBaoKeeperFadeInOutFast" >
+        </activity>
+        <activity
+            android:name=".activity.WeiBoOAuthActivtiy"
+            android:label="@string/activity_login_taobao"
+            android:theme="@style/Theme.AndroidDevelopers" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="OAuthActivity"
+                    android:scheme="weibo4android" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.OAuthActivity" android:label="@string/activity_login_taobao" android:theme="@style/Theme.AndroidDevelopers">
-        </activity>
-        
-        <activity android:name=".activity.WeiBoOAuthActivtiy" android:label="@string/activity_login_taobao" android:theme="@style/Theme.AndroidDevelopers">
-        	<intent-filter>
-		        <action android:name="android.intent.action.VIEW" />
-		        <category android:name="android.intent.category.DEFAULT" />
-		        <category android:name="android.intent.category.BROWSABLE" />
-		         <data android:scheme="weibo4android" android:host="OAuthActivity" />  
-			</intent-filter>
-        </activity>
-        
-        <activity android:name=".activity.AuthorizeActivity"
-        		  android:configChanges="keyboardHidden|orientation"
-                  android:label="@string/app_name">
+        <activity
+            android:name=".activity.AuthorizeActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
-                <data android:scheme="weibo4andriod" android:host="OAuthActivity" />
+
+                <data
+                    android:host="OAuthActivity"
+                    android:scheme="weibo4andriod" />
             </intent-filter>
         </activity>
-        
-        <activity android:configChanges="keyboardHidden|orientation" android:name=".activity.TestActivity">
-	        <intent-filter>
-		        <action android:name="android.intent.action.VIEW" />
-		        <category android:name="android.intent.category.DEFAULT" />
-		        <category android:name="android.intent.category.BROWSABLE" />
-		        <data android:scheme="weiboandroidsdk" android:host="TimeLineActivity" /> 
-			</intent-filter>
+        <activity
+            android:name=".activity.TestActivity"
+            android:configChanges="keyboardHidden|orientation" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="TimeLineActivity"
+                    android:scheme="weiboandroidsdk" />
+            </intent-filter>
         </activity>
-        
-        <activity android:theme="@style/ContentOverlay"
-        	android:launchMode="singleTask"
-			android:configChanges="keyboardHidden|orientation"                           
-			android:windowSoftInputMode="adjustPan|stateAlwaysVisible" android:name="com.weibo.net.ShareActivity">
-		</activity>
-        
-        
+        <activity
+            android:name="com.weibo.net.ShareActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:theme="@style/ContentOverlay"
+            android:windowSoftInputMode="adjustPan|stateAlwaysVisible" >
+        </activity>
         <activity android:name=".activity.AboutActivity" >
         </activity>
         <activity android:name=".activity.ImageListActivity" />
-               
-        <activity android:label="@string/activity_sample_code" android:name=".activity.fragment.SampleList" android:theme="@style/Theme.AndroidDevelopers">
+        <activity
+            android:name=".activity.fragment.SampleList"
+            android:label="@string/activity_sample_code"
+            android:theme="@style/Theme.AndroidDevelopers" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-
-        <activity android:name="..activity.fragment.SendResult"/>
+        <activity android:name="..activity.fragment.SendResult" />
 
         <!-- Fragment Support Samples -->
 
-        <activity android:label="@string/fragment_alert_dialog_support" android:name=".activity.fragment.FragmentAlertDialogSupport">
+        <activity
+            android:name=".activity.fragment.FragmentAlertDialogSupport"
+            android:label="@string/fragment_alert_dialog_support" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.fragment.FragmentArgumentsSupport"
+            android:label="@string/fragment_arguments_support" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.fragment.FragmentCustomAnimationSupport"
+            android:label="@string/fragment_custom_animation_support" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.fragment.FragmentHideShowSupport"
+            android:label="@string/fragment_hide_show_support"
+            android:windowSoftInputMode="stateUnchanged" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.fragment.FragmentContextMenuSupport"
+            android:label="@string/fragment_context_menu_support" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.fragment.FragmentDialogSupport"
+            android:label="@string/fragment_dialog_support" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.fragment.FragmentDialogOrActivitySupport"
+            android:label="@string/fragment_dialog_or_activity_support" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.fragment.FragmentLayoutSupport"
+            android:label="@string/fragment_layout_support" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.fragment.FragmentListArraySupport"
+            android:label="@string/fragment_list_array_support" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".FragmentLayoutSupport$DetailsActivity" />
+        <activity
+            android:name=".activity.fragment.FragmentMenuSupport"
+            android:label="@string/fragment_menu_support" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.fragment.FragmentRetainInstanceSupport"
+            android:label="@string/fragment_retain_instance_support" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.fragment.FragmentReceiveResultSupport"
+            android:label="@string/fragment_receive_result_support" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.fragment.FragmentStackSupport"
+            android:label="@string/fragment_stack_support" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.fragment.FragmentTabs"
+            android:label="@string/fragment_tabs" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.fragment.FragmentTabsPager"
+            android:label="@string/fragment_tabs_pager" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.fragment.FragmentPagerSupport"
+            android:label="@string/fragment_pager_support" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.fragment.FragmentStatePagerSupport"
+            android:label="@string/fragment_state_pager_support" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE" />
             </intent-filter>
         </activity>
 
-        <activity android:label="@string/fragment_arguments_support" android:name=".activity.fragment.FragmentArgumentsSupport">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:label="@string/fragment_custom_animation_support" android:name=".activity.fragment.FragmentCustomAnimationSupport">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:label="@string/fragment_hide_show_support" android:name=".activity.fragment.FragmentHideShowSupport" android:windowSoftInputMode="stateUnchanged">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:label="@string/fragment_context_menu_support" android:name=".activity.fragment.FragmentContextMenuSupport">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:label="@string/fragment_dialog_support" android:name=".activity.fragment.FragmentDialogSupport">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:label="@string/fragment_dialog_or_activity_support" android:name=".activity.fragment.FragmentDialogOrActivitySupport">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:label="@string/fragment_layout_support" android:name=".activity.fragment.FragmentLayoutSupport">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:label="@string/fragment_list_array_support" android:name=".activity.fragment.FragmentListArraySupport">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".FragmentLayoutSupport$DetailsActivity"/>
-
-        <activity android:label="@string/fragment_menu_support" android:name=".activity.fragment.FragmentMenuSupport">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:label="@string/fragment_retain_instance_support" android:name=".activity.fragment.FragmentRetainInstanceSupport">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:label="@string/fragment_receive_result_support" android:name=".activity.fragment.FragmentReceiveResultSupport">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:label="@string/fragment_stack_support" android:name=".activity.fragment.FragmentStackSupport">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:label="@string/fragment_tabs" android:name=".activity.fragment.FragmentTabs">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:label="@string/fragment_tabs_pager" android:name=".activity.fragment.FragmentTabsPager">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:label="@string/fragment_pager_support" android:name=".activity.fragment.FragmentPagerSupport">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:label="@string/fragment_state_pager_support" android:name=".activity.fragment.FragmentStatePagerSupport">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="com.actionbarsherlock.sample.fragments.EXAMPLE"/>
-            </intent-filter>
-        </activity>
-        
-         <provider android:authorities="com.example.android.apis.supportv4.app.LoaderThrottle" android:name=".activity.fragment.LoaderThrottleSupport$SimpleProvider" />
-         
+        <provider
+            android:name=".activity.fragment.LoaderThrottleSupport$SimpleProvider"
+            android:authorities="com.example.android.apis.supportv4.app.LoaderThrottle" />
     </application>
 
 </manifest>

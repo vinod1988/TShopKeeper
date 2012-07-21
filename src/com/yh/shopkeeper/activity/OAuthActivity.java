@@ -47,15 +47,15 @@ public class OAuthActivity extends AbstractAsyncActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.main);
-		
+		this.connectionRepository = getApplicationContext().getConnectionRepository();
+		this.connectionFactory = getApplicationContext().getOpenTaoBaoConnectionFactory();
+
 		webView=(WebView)this.findViewById(R.id.webview_login_taobao);
 		// OpenTaoBao uses javascript to redirect to the success page
 		webView.getSettings().setJavaScriptEnabled(true);
 		// Using a custom web view client to capture the access token
 		webView.setWebViewClient(new TaoBaoOAuthWebViewClient());
 		this.activity = this;
-		this.connectionRepository = getApplicationContext().getConnectionRepository();
-		this.connectionFactory = getApplicationContext().getOpenTaoBaoConnectionFactory();
 	}
 
 	@Override
@@ -85,7 +85,7 @@ public class OAuthActivity extends AbstractAsyncActivity {
 
 	private void displayOpenTaoBaoOptions() {
 		Intent intent = new Intent();
-		intent.setClass(this, ShopKeeperActivity.class);
+		intent.setClass(this, MainActivity.class);
 		startActivity(intent);
 		finish();
 	}
@@ -143,7 +143,6 @@ public class OAuthActivity extends AbstractAsyncActivity {
 				CharSequence errorReason = uri.getQueryParameter("error_description").replace("+", " ");
 				Log.v(TAG, errorReason.toString());
 				Toast.makeText(getApplicationContext(), errorReason, Toast.LENGTH_LONG).show();
-				displayOpenTaoBaoOptions();
 			}
 		}
 	}
