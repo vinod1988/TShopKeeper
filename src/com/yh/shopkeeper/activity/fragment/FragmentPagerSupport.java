@@ -14,81 +14,86 @@
  * limitations under the License.
  */
 
+
 package com.yh.shopkeeper.activity.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
-import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.app.SherlockListFragment;
 import com.yh.shopkeeper.R;
 
-public class FragmentStackSupport extends SherlockFragmentActivity {
-    int mStackLevel = 1;
+
+public class FragmentPagerSupport extends SherlockFragmentActivity {
+    static final int NUM_ITEMS = 10;
+
+    MyAdapter mAdapter;
+
+    ViewPager mPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(SampleList.THEME); //Used for theme switching in samples
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_stack);
+        setContentView(R.layout.fragment_pager);
+
+        mAdapter = new MyAdapter(getSupportFragmentManager());
+
+        mPager = (ViewPager)findViewById(R.id.pager);
+        mPager.setAdapter(mAdapter);
 
         // Watch for button clicks.
-        Button button = (Button)findViewById(R.id.new_fragment);
+        Button button = (Button)findViewById(R.id.goto_first);
         button.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                addFragmentToStack();
+                mPager.setCurrentItem(0);
             }
         });
+        button = (Button)findViewById(R.id.goto_last);
+        button.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                mPager.setCurrentItem(NUM_ITEMS-1);
+            }
+        });
+    }
 
-        if (savedInstanceState == null) {
-            // Do first time initialization -- add initial fragment.
-            Fragment newFragment = CountingFragment.newInstance(mStackLevel);
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.add(R.id.simple_fragment, newFragment).commit();
-        } else {
-            mStackLevel = savedInstanceState.getInt("level");
+    public static class MyAdapter extends FragmentPagerAdapter {
+        public MyAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public int getCount() {
+            return NUM_ITEMS;
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return ArrayListFragment.newInstance(position);
         }
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putInt("level", mStackLevel);
-    }
-
-
-    void addFragmentToStack() {
-        mStackLevel++;
-
-        // Instantiate a new fragment.
-        Fragment newFragment = CountingFragment.newInstance(mStackLevel);
-
-        // Add the fragment to the activity, pushing this transaction
-        // on to the back stack.
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.simple_fragment, newFragment);
-        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        ft.addToBackStack(null);
-        ft.commit();
-    }
-
-
-
-    public static class CountingFragment extends SherlockFragment {
+    public static class ArrayListFragment extends SherlockListFragment {
         int mNum;
 
         /**
          * Create a new instance of CountingFragment, providing "num"
          * as an argument.
          */
-        static CountingFragment newInstance(int num) {
-            CountingFragment f = new CountingFragment();
+        static ArrayListFragment newInstance(int num) {
+            ArrayListFragment f = new ArrayListFragment();
 
             // Supply num input as an argument.
             Bundle args = new Bundle();
@@ -114,13 +119,23 @@ public class FragmentStackSupport extends SherlockFragmentActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-            View v = inflater.inflate(R.layout.main, container, false);
-            
+            View v = inflater.inflate(R.layout.fragment_pager_list, container, false);
             View tv = v.findViewById(R.id.text);
             ((TextView)tv).setText("Fragment #" + mNum);
-            tv.setBackgroundDrawable(getResources().getDrawable(android.R.drawable.gallery_thumb));
             return v;
         }
-    }
 
+        @Override
+        public void onActivityCreated(Bundle savedInstanceState) {
+            super.onActivityCreated(savedInstanceState);
+            setListAdapter(new ArrayAdapter<String>(getActivity(),
+                    android.R.layout.simple_list_item_1, Cheeses.sCheeseStrings));
+        }
+
+        @Override
+        public void onListItemClick(ListView l, View v, int position, long id) {
+            Log.i("FragmentList", "Item clicked: " + id);
+        }
+    }
 }
+

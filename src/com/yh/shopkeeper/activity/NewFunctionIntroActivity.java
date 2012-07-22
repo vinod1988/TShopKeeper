@@ -7,8 +7,11 @@ import org.taptwo.android.widget.ViewFlow;
 import org.taptwo.android.widget.ViewFlow.ViewSwitchListener;
 
 import com.yh.shopkeeper.adapter.ViewFlowImageAdapter;
+import com.yh.shopkeeper.utils.SharedPreferenceHelper;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
@@ -33,6 +36,10 @@ public class NewFunctionIntroActivity extends Activity {
 			@Override
 			public void onSwitched(View view, int position) {
 				if(position>=2){
+					Editor editor = SharedPreferenceHelper.getInstance(view.getContext().getApplicationContext()).edit();
+					editor.putBoolean("show_new_function", false);
+					editor.commit();
+					
 					Intent intent = new Intent();
 					intent.setClass(view.getContext(), MainActivity.class);
 					startActivity(intent);

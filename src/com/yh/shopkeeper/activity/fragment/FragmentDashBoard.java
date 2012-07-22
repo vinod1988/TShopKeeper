@@ -45,9 +45,10 @@ public class FragmentDashBoard extends SherlockFragment {
         btnOrder.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 fireTrackerEvent("Order");  
-                
+                Intent intent=new Intent();
+                intent.setClass(getActivity(), SampleList.class);
+                view.getContext().startActivity(intent);
             }
-            
         });
         
         // Attach event handlers
@@ -98,7 +99,7 @@ public class FragmentDashBoard extends SherlockFragment {
             }
         });
         
-        Button btnShowCase=(Button) root.findViewById(R.id.home_btn_shipping);
+        Button btnShowCase=(Button) root.findViewById(R.id.home_btn_showcase);
         badgeShowCase=new BadgeView(this.getActivity(),btnShowCase);
         badgeShowCase.setText("230");
         badgeShowCase.setBadgeBackgroundColor(Color.BLUE);

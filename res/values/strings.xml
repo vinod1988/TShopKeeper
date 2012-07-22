@@ -70,12 +70,11 @@ All Rights Reserved."</string>
     <string name="fmt_send_err_account_disabled">你已经关闭了帐户%s的消息收发</string>
     
     <string name="settings_about_version">版本</string>
-    <string name="settings_update">检查新版本</string>
+    <string name="settings_update">发布新版本</string>
     <string name="settings_feedback">意见反馈</string>
-    
+    <string name="settings_new_version_title">检查到新版本,请确认是否需要下载版本.</string>
     <string name="contact_info_qqsync_intro">使用说明</string>
-    
-    
+        
     <string name="empty">Loading images...</string>
     <string name="noTasks">No tasks</string>
     <string name="random">Random</string>
