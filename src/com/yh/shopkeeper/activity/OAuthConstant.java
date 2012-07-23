@@ -1,14 +1,14 @@
 package com.yh.shopkeeper.activity;
 
-import com.yh.android.weibo.Weibo;
-import com.yh.android.weibo.http.AccessToken;
-import com.yh.android.weibo.http.RequestToken;
+//import com.yh.android.weibo.Weibo;
+//import com.yh.android.weibo.http.AccessToken;
+//import com.yh.android.weibo.http.RequestToken;
 
 public class OAuthConstant {
-	private static Weibo weibo=null;
+//	private static Weibo weibo=null;
 	private static OAuthConstant instance=null;
-	private RequestToken requestToken;
-	private AccessToken accessToken;
+//	private RequestToken requestToken;
+//	private AccessToken accessToken;
 	private String token;
 	private String tokenSecret;
 	private OAuthConstant(){};
@@ -17,26 +17,28 @@ public class OAuthConstant {
 			instance= new OAuthConstant();
 		return instance;
 	}
-	public Weibo getWeibo(){
-		if(weibo==null)
-			weibo= new Weibo();
-		return weibo;
-	}
+//	public Weibo getWeibo(){
+//		if(weibo==null)
+//			weibo= new Weibo();
+//		return weibo;
+//	}
 	
-	public AccessToken getAccessToken() {
-		return accessToken;
-	}
-	public void setAccessToken(AccessToken accessToken) {
-		this.accessToken = accessToken;
-		this.token=accessToken.getToken();
-		this.tokenSecret=accessToken.getTokenSecret();
-	}
-	public RequestToken getRequestToken() {
-		return requestToken;
-	}
-	public void setRequestToken(RequestToken requestToken) {
-		this.requestToken = requestToken;
-	}
+//	public AccessToken getAccessToken() {
+//		return accessToken;
+//	}
+//	public void setAccessToken(AccessToken accessToken) {
+//		this.accessToken = accessToken;
+//		this.token=accessToken.getToken();
+//		this.tokenSecret=accessToken.getTokenSecret();
+//	}
+//	public RequestToken getRequestToken() {
+//		return requestToken;
+//	}
+//	public void setRequestToken(RequestToken requestToken) {
+//		this.requestToken = requestToken;
+//	}
+	
+	
 	public String getToken() {
 		return token;
 	}

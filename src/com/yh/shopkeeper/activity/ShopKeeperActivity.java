@@ -2,22 +2,22 @@ package com.yh.shopkeeper.activity;
 
 import java.util.List;
 
-import com.weibo.net.AccessToken;
-import com.weibo.net.DialogError;
-import com.weibo.net.WeiboOAuth2;
-import com.weibo.net.WeiboDialogListener;
-import com.weibo.net.WeiboException;
+//import com.weibo.net.AccessToken;
+//import com.weibo.net.DialogError;
+//import com.weibo.net.WeiboOAuth2;
+//import com.weibo.net.WeiboDialogListener;
+//import com.weibo.net.WeiboException;
 import com.yh.android.framework.social.connect.Connection;
 import com.yh.android.framework.social.connect.ConnectionRepository;
 import com.yh.android.framework.social.connect.DuplicateConnectionException;
 import com.yh.android.framework.social.oauth2.AccessGrant;
 import com.yh.android.taobao.fkw.api.OpenTaoBao;
 import com.yh.android.taobao.fkw.connect.OpenTaoBaoConnectionFactory;
-import com.yh.android.weibo.Paging;
-import com.yh.android.weibo.Status;
-import com.yh.android.weibo.Weibo;
-import com.yh.android.weibo.fkw.api.OpenWeiBo;
-import com.yh.android.weibo.fkw.connect.OpenWeiBoConnectionFactory;
+//import com.yh.android.weibo.Paging;
+//import com.yh.android.weibo.Status;
+//import com.yh.android.weibo.Weibo;
+//import com.yh.android.weibo.fkw.api.OpenWeiBo;
+//import com.yh.android.weibo.fkw.connect.OpenWeiBoConnectionFactory;
 import com.taobao.api.domain.Shop;
 import com.yh.shopkeeper.AbstractAsyncActivity;
 import com.yh.shopkeeper.R;
@@ -54,11 +54,11 @@ public class ShopKeeperActivity extends AbstractAsyncActivity {
 		btnWeiBo.setOnClickListener(new Button.OnClickListener() {
 
 			public void onClick(View v) {
-				WeiboOAuth2 weibo = WeiboOAuth2.getInstance();
-				// Oauth2.0
-				weibo.setRedirectUrl(WeiboOAuth2.URL_OAUTH2_CALL_BACK);// 此处回调页内容应该替换为与appkey对应的应用回调页
-				weibo.authorize(ShopKeeperActivity.this,
-						new AuthDialogListener());
+//				WeiboOAuth2 weibo = WeiboOAuth2.getInstance();
+//				// Oauth2.0
+//				weibo.setRedirectUrl(WeiboOAuth2.URL_OAUTH2_CALL_BACK);// 此处回调页内容应该替换为与appkey对应的应用回调页
+//				weibo.authorize(ShopKeeperActivity.this,
+//						new AuthDialogListener());
 			}
 		});
 	}
@@ -86,45 +86,45 @@ public class ShopKeeperActivity extends AbstractAsyncActivity {
 		
 		Button btnGetWeiBo = (Button) findViewById(R.id.btnGetWeiBo);
 		
-		if(isWeiBoConnected()){
-			btnGetWeiBo.setVisibility(View.GONE);
-			
-			btnGetWeiBo.setOnClickListener(new Button.OnClickListener() {
-				public void onClick(View v) {
-
-					if(isWeiBoConnected()){
-						Weibo weibo = OAuthConstant.getInstance().getWeibo();
-						weibo.setToken(WeiboOAuth2.getInstance().getAccessToken()
-								.getToken(), WeiboOAuth2.getInstance()
-								.getAccessToken().getSecret());
-
-						List<Status> friendsTimeline = null;
-						try {
-							try {
-								friendsTimeline = weibo.getHomeTimeline(new Paging(
-										1, 20));
-							} catch (com.yh.android.weibo.WeiboException e) {
-								// TODO Auto-generated catch block
-							}
-							StringBuilder stringBuilder = new StringBuilder("");
-							for (Status status : friendsTimeline) {
-								stringBuilder.append(status.getUser()
-										.getScreenName()
-										+ "说:\n"
-										+ status.getText()
-										+ "\n--------------------------------------------------\n");
-							}
-							TextView textView = (TextView) findViewById(R.id.textView1);
-							textView.setText(stringBuilder.toString());
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				}
-			});
-		}else{
-			btnGetWeiBo.setVisibility(View.VISIBLE);
-		}
+//		if(isWeiBoConnected()){
+//			btnGetWeiBo.setVisibility(View.GONE);
+//			
+//			btnGetWeiBo.setOnClickListener(new Button.OnClickListener() {
+//				public void onClick(View v) {
+//
+//					if(isWeiBoConnected()){
+//						Weibo weibo = OAuthConstant.getInstance().getWeibo();
+//						weibo.setToken(WeiboOAuth2.getInstance().getAccessToken()
+//								.getToken(), WeiboOAuth2.getInstance()
+//								.getAccessToken().getSecret());
+//
+//						List<Status> friendsTimeline = null;
+//						try {
+//							try {
+//								friendsTimeline = weibo.getHomeTimeline(new Paging(
+//										1, 20));
+//							} catch (com.yh.android.weibo.WeiboException e) {
+//								// TODO Auto-generated catch block
+//							}
+//							StringBuilder stringBuilder = new StringBuilder("");
+//							for (Status status : friendsTimeline) {
+//								stringBuilder.append(status.getUser()
+//										.getScreenName()
+//										+ "说:\n"
+//										+ status.getText()
+//										+ "\n--------------------------------------------------\n");
+//							}
+//							TextView textView = (TextView) findViewById(R.id.textView1);
+//							textView.setText(stringBuilder.toString());
+//						} catch (Exception e) {
+//							e.printStackTrace();
+//						}
+//					}
+//				}
+//			});
+//		}else{
+//			btnGetWeiBo.setVisibility(View.VISIBLE);
+//		}
 	}
 
 	private void showConnectOption() {
@@ -140,15 +140,16 @@ public class ShopKeeperActivity extends AbstractAsyncActivity {
 	// Private methods
 	// ***************************************
 	private boolean isConnected() {
-		return connectionRepository.findPrimaryConnection(OpenTaoBao.class) != null;
+		//return connectionRepository.findPrimaryConnection(OpenTaoBao.class) != null;
+		return true;
 	}
 	
 	// ***************************************
 	// Private methods
 	// ***************************************
-	private boolean isWeiBoConnected() {
-		return connectionRepository.findPrimaryConnection(OpenWeiBo.class) != null;
-	}
+	//private boolean isWeiBoConnected() {
+		//return connectionRepository.findPrimaryConnection(OpenWeiBo.class) != null;
+	//}
 
 	private void displayOpenTaoBaoAuthorization() {
 		Intent intent = new Intent();
@@ -197,52 +198,52 @@ public class ShopKeeperActivity extends AbstractAsyncActivity {
 		}
 	}
 
-	class AuthDialogListener implements WeiboDialogListener {
-
-		@Override
-		public void onComplete(Bundle values) {
-			String token = values.getString("access_token");
-			String expires_in = values.getString("expires_in");
-			AccessToken accessToken = new AccessToken(token,
-					Weibo.CONSUMER_SECRET);
-			accessToken.setExpiresIn(expires_in);
-			WeiboOAuth2.getInstance().setAccessToken(accessToken);
-			
-			ConnectionRepository connectionRepository = getApplicationContext().getConnectionRepository();
-			OpenWeiBoConnectionFactory connectionFactory = getApplicationContext().getOpenWeiBoConnectionFactory();
-			
-			AccessGrant accessGrant=new AccessGrant(token,null,accessToken.getRefreshToken(),Integer.parseInt(expires_in),accessToken.getSecret());
-			Connection<OpenWeiBo> connection = connectionFactory.createConnection(accessGrant);
-			try {
-				connectionRepository.addConnection(connection);
-			} catch (DuplicateConnectionException e) {
-				// connection already exists in repository!
-			}
-	
-			Intent intent = new Intent();
-			intent.setClass(ShopKeeperActivity.this, TestActivity.class);
-			startActivity(intent);
-		}
-
-		@Override
-		public void onError(DialogError e) {
-			Toast.makeText(getApplicationContext(),
-					"Auth error : " + e.getMessage(), Toast.LENGTH_LONG).show();
-		}
-
-		@Override
-		public void onCancel() {
-			Toast.makeText(getApplicationContext(), "Auth cancel",
-					Toast.LENGTH_LONG).show();
-		}
-
-		@Override
-		public void onWeiboException(WeiboException e) {
-			Toast.makeText(getApplicationContext(),
-					"Auth exception : " + e.getMessage(), Toast.LENGTH_LONG)
-					.show();
-		}
-
-	}
+//	class AuthDialogListener implements WeiboDialogListener {
+//
+//		@Override
+//		public void onComplete(Bundle values) {
+//			String token = values.getString("access_token");
+//			String expires_in = values.getString("expires_in");
+//			AccessToken accessToken = new AccessToken(token,
+//					Weibo.CONSUMER_SECRET);
+//			accessToken.setExpiresIn(expires_in);
+//			WeiboOAuth2.getInstance().setAccessToken(accessToken);
+//			
+//			ConnectionRepository connectionRepository = getApplicationContext().getConnectionRepository();
+//			OpenWeiBoConnectionFactory connectionFactory = getApplicationContext().getOpenWeiBoConnectionFactory();
+//			
+//			AccessGrant accessGrant=new AccessGrant(token,null,accessToken.getRefreshToken(),Integer.parseInt(expires_in),accessToken.getSecret());
+//			Connection<OpenWeiBo> connection = connectionFactory.createConnection(accessGrant);
+//			try {
+//				connectionRepository.addConnection(connection);
+//			} catch (DuplicateConnectionException e) {
+//				// connection already exists in repository!
+//			}
+//	
+//			Intent intent = new Intent();
+//			intent.setClass(ShopKeeperActivity.this, TestActivity.class);
+//			startActivity(intent);
+//		}
+//
+//		@Override
+//		public void onError(DialogError e) {
+//			Toast.makeText(getApplicationContext(),
+//					"Auth error : " + e.getMessage(), Toast.LENGTH_LONG).show();
+//		}
+//
+//		@Override
+//		public void onCancel() {
+//			Toast.makeText(getApplicationContext(), "Auth cancel",
+//					Toast.LENGTH_LONG).show();
+//		}
+//
+//		@Override
+//		public void onWeiboException(WeiboException e) {
+//			Toast.makeText(getApplicationContext(),
+//					"Auth exception : " + e.getMessage(), Toast.LENGTH_LONG)
+//					.show();
+//		}
+//
+//	}
 
 }
