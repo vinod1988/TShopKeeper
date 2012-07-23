@@ -57,6 +57,13 @@
             android:label="@string/activity_login_taobao"
             android:theme="@style/Theme.TaoBaoKeeperFadeInOutFast" >
         </activity>
+        
+        <activity
+            android:name=".activity.Flip"
+            android:label="@string/activity_login_taobao"
+            android:theme="@style/Theme.TaoBaoKeeperFadeInOutFast" >
+        </activity>
+        
         <activity
             android:name=".activity.WeiBoOAuthActivtiy"
             android:label="@string/activity_login_taobao"

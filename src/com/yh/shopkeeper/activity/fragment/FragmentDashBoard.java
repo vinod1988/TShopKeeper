@@ -2,6 +2,7 @@ package com.yh.shopkeeper.activity.fragment;
 
 import com.actionbarsherlock.app.SherlockFragment;
 import com.yh.shopkeeper.R;
+import com.yh.shopkeeper.activity.Flip;
 import com.yh.shopkeeper.utils.AnalyticsUtils;
 import com.yh.shopkeeper.utils.UIUtils;
 import com.yh.shopkeeper.view.BadgeView;
@@ -41,13 +42,15 @@ public class FragmentDashBoard extends SherlockFragment {
         badgeOrder.setTextSize(12);
         badgeOrder.setBadgePosition(BadgeView.POSITION_TOP_RIGHT);
         badgeOrder.show();
-        
+                
         btnOrder.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 fireTrackerEvent("Order");  
                 Intent intent=new Intent();
                 intent.setClass(getActivity(), SampleList.class);
                 view.getContext().startActivity(intent);
+                //overridePendingTransition(R.anim.push_left_in,R.anim.push_left_out);
+                
             }
         });
         
@@ -63,7 +66,9 @@ public class FragmentDashBoard extends SherlockFragment {
         btnBl.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 fireTrackerEvent("BL");  
-                
+                Intent intent=new Intent();
+                intent.setClass(getActivity(), Flip.class);
+                view.getContext().startActivity(intent);
             }
             
         });
