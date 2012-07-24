@@ -1,35 +1,35 @@
 <com.yh.shopkeeper.ui.widget.DashboardLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#00000000"
+    android:background="@drawable/wallpaper_b"
      >
 
     <Button
         android:id="@+id/home_btn_order"
         style="@style/DashboardButton"
-         android:background="@drawable/icon_shopping_cart"
-        android:drawableTop="@drawable/fb_app_chat"
+        android:background="@drawable/btn_tag_suggestion"
+        android:drawableTop="@drawable/category_item_picture_focus"
         android:text="@string/label_order" />
 
     <Button
         android:id="@+id/home_btn_bl"
         style="@style/DashboardButton"
          android:background="@drawable/btn_tag_suggestion"
-        android:drawableTop="@drawable/fb_app_newsfeed"
+        android:drawableTop="@drawable/category_item_webpage_focus"
         android:text="@string/label_bl" />
 
     <Button
         android:id="@+id/home_btn_shipping"
         style="@style/DashboardButton"
          android:background="@drawable/btn_tag_suggestion"
-        android:drawableTop="@drawable/fb_app_nearby"
+        android:drawableTop="@drawable/category_item_news_focus"
         android:text="@string/label_shipping" />
 
     <Button
         android:id="@+id/home_btn_production"
         style="@style/DashboardButton"
          android:background="@drawable/btn_tag_suggestion"
-        android:drawableTop="@drawable/fb_app_friends"
+        android:drawableTop="@drawable/category_item_mp3_focus"
         android:text="@string/label_production" />
 
  
@@ -37,14 +37,14 @@
         android:id="@+id/home_btn_showcase"
         style="@style/DashboardButton"
          android:background="@drawable/btn_tag_suggestion"
-        android:drawableTop="@drawable/fb_app_help"
+        android:drawableTop="@drawable/category_item_know_focus"
         android:text="@string/label_showcase" />
 
     <Button
         android:id="@+id/home_btn_instock"
         style="@style/DashboardButton"
          android:background="@drawable/btn_tag_suggestion"
-        android:drawableTop="@drawable/fb_app_events"
+        android:drawableTop="@drawable/category_item_baike_focus"
         android:text="@string/label_instock" />
 
      
@@ -52,14 +52,14 @@
         android:id="@+id/home_btn_comment"
         style="@style/DashboardButton"
          android:background="@drawable/btn_tag_suggestion"
-        android:drawableTop="@drawable/fb_app_notes"
+        android:drawableTop="@drawable/category_item_app_focus"
         android:text="@string/label_comment" />
 
     
     <Button
         android:id="@+id/home_btn_notification"
         style="@style/DashboardButton"
-        android:drawableTop="@drawable/icon_wangwang"
+        android:drawableTop="@drawable/category_item_app_focus"
         android:background="@drawable/btn_tag_suggestion"
         android:text="@string/label_notification" />
     <!--  <Button
