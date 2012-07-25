@@ -3,6 +3,7 @@ package com.yh.shopkeeper.activity.fragment;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.yh.shopkeeper.R;
 import com.yh.shopkeeper.activity.Flip;
+import com.yh.shopkeeper.activity.ImageListActivity;
 import com.yh.shopkeeper.utils.AnalyticsUtils;
 import com.yh.shopkeeper.utils.UIUtils;
 import com.yh.shopkeeper.view.BadgeView;
@@ -85,6 +86,9 @@ public class FragmentDashBoard extends SherlockFragment {
             public void onClick(View view) {
                 fireTrackerEvent("Shipping");
                 // Launch sessions list
+                Intent intent=new Intent();
+                intent.setClass(getActivity(), ImageListActivity.class);
+                view.getContext().startActivity(intent);
             }
         });
 

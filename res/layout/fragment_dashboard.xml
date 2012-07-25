@@ -1,7 +1,7 @@
 <com.yh.shopkeeper.ui.widget.DashboardLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/wallpaper_b"
+    android:background="@drawable/bg"
      >
 
     <Button
@@ -40,28 +40,43 @@
         android:drawableTop="@drawable/category_item_know_focus"
         android:text="@string/label_showcase" />
 
+       
+    <Button
+        android:id="@+id/home_btn_comment"
+        style="@style/DashboardButton"
+         android:background="@drawable/btn_tag_suggestion"
+        android:drawableTop="@drawable/category_item_webpage_focus"
+        android:text="@string/label_comment" />
+    
+     <Button
+        android:id="@+id/home_btn_notification"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/category_item_webpage_focus"
+        android:background="@drawable/btn_tag_suggestion"
+        android:text="@string/label_notification" />
+      
     <Button
         android:id="@+id/home_btn_instock"
         style="@style/DashboardButton"
          android:background="@drawable/btn_tag_suggestion"
         android:drawableTop="@drawable/category_item_baike_focus"
-        android:text="@string/label_instock" />
+        android:text="@string/label_customer" />
 
-     
-    <Button
-        android:id="@+id/home_btn_comment"
+      <Button
+        android:id="@+id/home_btn_data_chart"
         style="@style/DashboardButton"
-         android:background="@drawable/btn_tag_suggestion"
-        android:drawableTop="@drawable/category_item_app_focus"
-        android:text="@string/label_comment" />
-
-    
-    <Button
-        android:id="@+id/home_btn_notification"
-        style="@style/DashboardButton"
-        android:drawableTop="@drawable/category_item_app_focus"
+        android:drawableTop="@drawable/category_item_webpage_focus"
         android:background="@drawable/btn_tag_suggestion"
-        android:text="@string/label_notification" />
+        android:text="@string/label_data_chart" />
+      
+    <Button
+        android:id="@+id/home_btn_sales"
+        style="@style/DashboardButton"
+         android:drawableTop="@drawable/category_item_webpage_focus"
+         android:background="@drawable/btn_tag_suggestion"
+       
+        android:text="@string/label_sales" />
+ 
     <!--  <Button
         android:id="@+id/home_btn_setting"
         style="@style/DashboardButton"

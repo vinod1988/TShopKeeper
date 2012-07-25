@@ -25,12 +25,12 @@
         android:name=".MainApplication"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:screenOrientation="portrait"
         android:theme="@android:style/Theme.NoTitleBar" >
         
         <activity
             android:name=".activity.LaunchActivity"
             android:label="@string/app_name"
+            android:screenOrientation="portrait" 
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,6 +42,7 @@
             android:name=".activity.NewFunctionIntroActivity"
             android:configChanges="locale|keyboardHidden|orientation"
             android:label="@string/app_name"
+             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
         </activity>
         
@@ -49,30 +50,32 @@
             android:name=".activity.MainActivity"
             android:label="@string/app_name"
             android:logo="@drawable/ad_logo"
+             android:screenOrientation="portrait"
             android:theme="@style/Theme.TaoBaoKeeper" >
         </activity>
         <activity
             android:name=".activity.OAuthActivity"
             android:label="@string/activity_login_taobao"
+             android:screenOrientation="portrait"
             android:theme="@style/Theme.TaoBaoKeeperFadeInOutFast" >
         </activity>
         
         <activity
             android:name=".activity.Flip"
             android:label="@string/activity_login_taobao"
+             android:screenOrientation="portrait"
             android:theme="@style/Theme.TaoBaoKeeperFadeInOutFast" >
         </activity>
         
         <activity
             android:name=".activity.WeiBoOAuthActivtiy"
             android:label="@string/activity_login_taobao"
+             android:screenOrientation="portrait"
             android:theme="@style/Theme.AndroidDevelopers" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data
                     android:host="OAuthActivity"
                     android:scheme="weibo4android" />
@@ -92,20 +95,7 @@
                     android:scheme="weibo4andriod" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activity.TestActivity"
-            android:configChanges="keyboardHidden|orientation" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="TimeLineActivity"
-                    android:scheme="weiboandroidsdk" />
-            </intent-filter>
-        </activity>
+        
         <activity
             android:name="com.weibo.net.ShareActivity"
             android:configChanges="keyboardHidden|orientation"
@@ -113,7 +103,10 @@
             android:theme="@style/ContentOverlay"
             android:windowSoftInputMode="adjustPan|stateAlwaysVisible" >
         </activity>
-        <activity android:name=".activity.AboutActivity" >
+        <activity android:name=".activity.AboutActivity" 
+             android:screenOrientation="portrait"
+             android:theme="@style/Theme.TaoBaoKeeperFadeInOutFast"
+             >
         </activity>
         <activity android:name=".activity.ImageListActivity" />
         <activity

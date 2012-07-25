@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <com.tencent.qqpimsecure.uilib.view.imageview.LoadingOutsideView android:id="@id/item_outside_loading" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.tencent.qqpimsecure.uilib.view.imageview.LoadingInsideView android:id="@id/item_inside_loading" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </FrameLayout>
+    <TextView android:textColor="@color/memory_bar_text_color" android:gravity="left" android:layout_gravity="center_vertical" android:id="@id/item_message" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" />
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:paddingRight="5.0dip" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/icon_image" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip">
+        <TextView android:id="@id/cpu_name" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/list_item_title_text_style" />
+        <TextView android:id="@id/cpu_state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="@style/help_info_content_text_style" />
+    </LinearLayout>
+</LinearLayout>

@@ -183,7 +183,7 @@ public class ShopKeeperActivity extends AbstractAsyncActivity {
 		protected Shop doInBackground(Void... arg0) {
 			Shop shop = null;
 			try {
-				shop = openTaoBao.shopOperations().requestRemainShowCase();
+				shop = openTaoBao.shopOperations().requestRemainShowCase().getShop();
 			} catch (Exception ex) {
 				ex.printStackTrace();
 				shop = null;

@@ -188,24 +188,34 @@ All Rights Reserved."</string>
     <string name="send_failed">分享失败！</string>
     <string name="del_pic">是否删除图片？</string>
     
-    <string name="label_order">查看订单</string>
-    <string name="label_bl">等待发货</string>
-    <string name="label_shipping">查看物流</string>
+    <string name="label_order">订单管理</string>
+    <string name="label_bl">发货管理</string>
+    <string name="label_shipping">物流管理</string>
     <string name="label_comment">评价管理</string>
-    <string name="label_notification">旺旺消息</string>
+    <string name="label_notification">提醒管理</string>
     <string name="label_setting">系统设置</string>
     <string name="label_showcase">橱窗管理</string>
-    <string name="label_production">我的宝贝</string>
-    <string name="label_instock">仓库管理</string>
-     
+    <string name="label_production">宝贝管理</string>
+    <string name="label_customer">客户服务</string>
+      <string name="label_data_chart">数据分析</string>
+     <string name="label_sales">营销管理</string>
+   
      <string name="label_production_up_">上架</string>
      <string name="label_production_down">下架</string>
      
-    <string name="label_wait_payment">待付款</string>
+    <string name="label_wait_payment">等待买家付款</string>
     <string name="label_wait_shipping">待发货</string>
     <string name="label_wait_receive">待签收</string>
     <string name="label_wait_payer_confirm">待回款</string>    
-     <string name="label_notifications_title">操作日志</string>    
-    
+     <string name="label_notifications_title">操作日志</string>
+     
+     <string name="label_already_shipping">已发货</string>
+     <string name="label_done_order">成功订单</string>
+     <string name="label_close_order">关闭的订单</string>
+     <string name="label_return_payment_order">退款中</string>
+     
+     <string name="label_for_sales_item">出售中的宝贝</string>
+     <string name="label_for_stock_item">仓库中的宝贝</string>
+     
     
 </resources>

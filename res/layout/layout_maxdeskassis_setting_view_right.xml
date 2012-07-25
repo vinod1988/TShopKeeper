@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res/com.tencent.qqpimsecure">
+    <ImageView android:id="@id/secure_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:src="@drawable/desktop_icon_logo" />
+    <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <com.tencent.qqpimsecure.uilib.view.button.SwitchButton android:gravity="center_vertical" android:id="@id/btn_traffic_suspended" android:layout_width="wrap_content" android:layout_height="wrap_content" app:button_text="@string/traffic_suspended_window_switch" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:src="@drawable/desktop_line" />
+        <com.tencent.qqpimsecure.uilib.view.button.SwitchButton android:gravity="center_vertical" android:id="@id/btn_net_work" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" app:button_text="@string/desk_assis_network" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:src="@drawable/desktop_line" />
+        <com.tencent.qqpimsecure.uilib.view.button.SwitchButton android:gravity="center_vertical" android:id="@id/btn_wifi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" app:button_text="@string/desk_assis_wifi" />
+    </LinearLayout>
+</LinearLayout>

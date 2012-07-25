@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res/com.tencent.qqpimsecure">
+    <RelativeLayout android:gravity="center" android:id="@id/gallery_rl" android:background="#ff313131" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.tencent.qqpimsecure.view.filesafe.GalleryExt android:id="@id/ga" android:layout_width="fill_parent" android:layout_height="fill_parent" android:spacing="16.0dip" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_title" android:background="@drawable/title_bg_02" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="46.0dip" android:layout_alignParentTop="true">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <Button android:layout_gravity="left|center" android:id="@id/back" android:background="@drawable/btn_back" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView android:textSize="15.0dip" android:textColor="@color/white" android:layout_gravity="right|center" android:id="@id/pic_position" android:paddingRight="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:gravity="left|center" android:id="@id/ll_footer" android:background="@drawable/image_gallery_bottom_bg" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="46.0dip" android:layout_alignParentBottom="true">
+        <Button android:id="@id/delete_button" android:background="@drawable/image_gallery_button_delete" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" />
+        <Button android:id="@id/decrypt_button" android:background="@drawable/image_gallery_button_decrypt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" />
+    </LinearLayout>
+</RelativeLayout>
