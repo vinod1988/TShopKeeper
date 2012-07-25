@@ -25,12 +25,12 @@
         android:name=".MainApplication"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
+        android:screenOrientation="portrait"
         android:theme="@android:style/Theme.NoTitleBar" >
         
         <activity
             android:name=".activity.LaunchActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,7 +42,6 @@
             android:name=".activity.NewFunctionIntroActivity"
             android:configChanges="locale|keyboardHidden|orientation"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
         </activity>
         
