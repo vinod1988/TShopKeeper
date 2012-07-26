@@ -210,7 +210,6 @@
     <color name="suspession_white">#ffffffff</color>
     <color name="log_white">#ffffffff</color>
     <color name="log_black">#ff000000</color>
-    <color name="transparent">#00ffffff</color>
     <color name="main_intro">#ff64696b</color>
     <color name="main_intro_selected">#ffffffff</color>
     <color name="main_title">#ff16366f</color>
@@ -296,7 +295,5 @@
     <color name="color_4c333333">#4c333333</color>
     <color name="color_4cffffff">#4cffffff</color>
     <color name="verifycode_outer_frame">#ffa0a0a0</color>
-    
-    
-    
+    <color name="white">#ffffffff</color>
 </resources>

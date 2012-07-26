@@ -318,7 +318,7 @@
         <item name="android:progressDrawable">@drawable/list_icon_star_big</item>
         <item name="android:minHeight">32.0dip</item>
     </style>
-    <style name="myMiddleRatingBar" parent="@android:style/Widget.RatingBar">
+	    <style name="myMiddleRatingBar" parent="@android:style/Widget.RatingBar">
         <item name="android:progressDrawable">@drawable/list_icon_star_middle</item>
         <item name="android:minHeight">28.0dip</item>
     </style>
@@ -335,7 +335,7 @@
         <item name="android:paddingRight">10.0dip</item>
         <item name="android:minWidth">80.0dip</item>
     </style>
-    <style name="button_delete">
+	    <style name="button_delete">
         <item name="android:background">@drawable/list_icon_kill</item>
     </style>
     <style name="button_stop">

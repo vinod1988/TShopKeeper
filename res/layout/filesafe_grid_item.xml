@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res/com.tencent.qqpimsecure">
-    <ImageView android:id="@id/file_icon" android:background="@drawable/encry_file_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" android:adjustViewBounds="true" android:maxWidth="93.0dip" android:maxHeight="77.0dip" />
-    <com.tencent.qqpimsecure.uilib.view.CheckBoxView android:layout_gravity="bottom|right|center" android:id="@id/file_tag" android:layout_width="wrap_content" android:layout_height="wrap_content" app:type="3" />
-</FrameLayout>

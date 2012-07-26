@@ -6,7 +6,6 @@
     <string name="app_copyright">"翊鸿科技公司 版权所有
 Copyright © 2012 yihong.
 All Rights Reserved."</string>
-
     <string name="app_exit_confirm_info">你确定要退出么?</string>
     <string name="app_exit_title">退出</string>
     <string name="app_about_title">关于</string>
@@ -217,5 +216,24 @@ All Rights Reserved."</string>
      <string name="label_for_sales_item">出售中的宝贝</string>
      <string name="label_for_stock_item">仓库中的宝贝</string>
      
-    
+     
+     <string name="remember_zte">系统提示</string>
+    <string name="hint_about_1">版本号：%s</string>
+    <string name="hint_about_2">所有权：YH公司</string>
+    <string name="hint_about_3">客服电话：0756-3398905</string>
+    <string name="do_not_remind_next_time">下次不再显示</string>
+    <string name="hint_qqsecure_notify_text">手机管家提醒您</string>
+    <string name="loading">正在加载...</string>
+    <string name="retry">重试</string>
+    <string name="go_on_load">更多...</string>
+    <string name="hint_about">"手机管家 %1$s for Android Build%2$s
+
+腾讯公司 版权所有
+Copyright © 2012- 2012 yh. All Rights Reserved.
+
+申明：
+"</string>
+    <string name="hint_about_link">此版本适用于Android平台2.0-2.3及4.0版手机， 如在其他平台的手机上使用本软件，对于出现的任何问题，使用过程中产生的2G/3G等数据流量费用，由运营商收取。本软件的安装使用受%1$s的约束。</string>
+    <string name="hint_network_error_text">网络不给力啊，设置一下网络再试试吧(错误代码%1$s)。</string>
+    <string name="version_description">新版特性</string>
 </resources>

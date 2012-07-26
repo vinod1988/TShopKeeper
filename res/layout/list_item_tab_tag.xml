@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
     <include layout="@layout/list_item_tab" />
-    <ImageView android:id="@id/item_left_top" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ad_first_appear" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+
+    <ImageView
+        android:id="@+id/item_left_top"
+        android:layout_width="30.0dip"
+        android:layout_height="30.0dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ad_first_appear" />
+
 </RelativeLayout>
