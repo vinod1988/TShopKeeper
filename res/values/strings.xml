@@ -188,16 +188,16 @@ All Rights Reserved."</string>
     <string name="del_pic">是否删除图片？</string>
     
     <string name="label_order">订单管理</string>
-    <string name="label_bl">发货管理</string>
-    <string name="label_shipping">物流管理</string>
+    <string name="label_bl">一键发货</string>
+    <string name="label_shipping">物流信息</string>
     <string name="label_comment">评价管理</string>
-    <string name="label_notification">提醒管理</string>
-    <string name="label_setting">系统设置</string>
-    <string name="label_showcase">橱窗管理</string>
+    <string name="label_notification">客户提醒</string>
+    <string name="label_showcase">自动橱窗</string>
     <string name="label_production">宝贝管理</string>
     <string name="label_customer">客户服务</string>
       <string name="label_data_chart">数据分析</string>
-     <string name="label_sales">营销管理</string>
+     <string name="label_sales">社交营销</string>
+   <string name="label_setting">系统设置</string>
    
      <string name="label_production_up_">上架</string>
      <string name="label_production_down">下架</string>
