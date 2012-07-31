@@ -66,7 +66,12 @@
              android:screenOrientation="portrait"
             android:theme="@style/Theme.TaoBaoKeeperFadeInOutFast" >
         </activity>
-        
+         <activity
+            android:name=".activity.ProductionActivity"
+            android:label="@string/activity_login_taobao"
+             android:screenOrientation="portrait"
+            android:theme="@style/Theme.TaoBaoKeeper" >
+        </activity>
         <activity
             android:name=".activity.WeiBoOAuthActivtiy"
             android:label="@string/activity_login_taobao"

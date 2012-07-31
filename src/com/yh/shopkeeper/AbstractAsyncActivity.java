@@ -33,7 +33,7 @@ public abstract class AbstractAsyncActivity extends SherlockFragmentActivity imp
 
     public void showProgressDialog(CharSequence message) {
         if (progressDialog == null) {
-            progressDialog = new ProgressDialog(this);
+            progressDialog = new ProgressDialog(this.getApplication());
             progressDialog.setIndeterminate(true);
         }
         progressDialog.setMessage(message);
@@ -47,7 +47,7 @@ public abstract class AbstractAsyncActivity extends SherlockFragmentActivity imp
     }
     
     public void displayDialogError(CharSequence message) {
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		AlertDialog.Builder builder = new AlertDialog.Builder(this.getApplication());
 		builder.setMessage(message);
 		builder.setCancelable(false);
 		builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {

@@ -28,6 +28,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingRight="10.0dip" >
+                
+                
             </FrameLayout>
 
             <TextView

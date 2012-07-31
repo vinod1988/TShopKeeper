@@ -4,6 +4,7 @@ import com.actionbarsherlock.app.SherlockFragment;
 import com.yh.shopkeeper.R;
 import com.yh.shopkeeper.activity.Flip;
 import com.yh.shopkeeper.activity.ImageListActivity;
+import com.yh.shopkeeper.activity.ProductionActivity;
 import com.yh.shopkeeper.utils.AnalyticsUtils;
 import com.yh.shopkeeper.utils.UIUtils;
 import com.yh.shopkeeper.view.BadgeView;
@@ -104,6 +105,10 @@ public class FragmentDashBoard extends SherlockFragment {
         btnProduction.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 fireTrackerEvent("Production");
+                Intent intent=new Intent();
+                intent.setClass(getActivity(), ProductionActivity.class);
+                view.getContext().startActivity(intent);
+
                 // Launch list of sessions and vendors the user has starred              
             }
         });
