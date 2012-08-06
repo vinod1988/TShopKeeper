@@ -46,6 +46,8 @@ public class RoundedColourFragment extends SherlockFragment {
         marginRight = margin_right;
         marginTop = margin_top;
         marginBottom = margin_bottom;
+        
+        
     }
 
     @Override
