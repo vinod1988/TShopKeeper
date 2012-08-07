@@ -22,6 +22,8 @@ public class Flip extends Activity implements OnGestureListener {
 	private GestureDetector detector;
 	private ViewFlipper flipper;
 	
+	
+	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
